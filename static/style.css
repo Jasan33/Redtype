@@ -1,0 +1,47 @@
+* {
+    color: aliceblue;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #707070;
+}
+
+.logo {
+    border-radius: 15px;
+    padding: 10px;
+    width: 250px;
+    margin: 30px;
+    margin-left: 3%;
+}
+
+.menu {
+    display: flex;
+    margin-left: 20%;
+    margin-top: -5%;
+    font-size: 20px;
+    justify-content: space-around;
+}
+
+.menu a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.menu a:hover {
+    color: rgb(246, 42, 42);
+    font-size: 25px;
+}
+
+.main_game {
+    text-align: center;
+    margin-top: 15%;
+    width: 80%;
+    margin-left: 5%;
+    padding: 70px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.124);
+    font-size: 40px;
+}
