@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redtype</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="script.js"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
 </head>
 <body>
     <div class="navbar">
-        <img class="logo" src={{ url_for('static', filename='images/redtype_logo.png') }}>
+        <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
         <div class="menu">
             <a href="Index.html" class="5" alt="Menu option 1: home">Home</a>
             <a href="" class="4" alt="Menu option 2: stats">Stats</a>
@@ -18,8 +18,9 @@
             <a href="" class="1" alt="Menu option 4: your profile">Profile</a>
         </div>
     </div>
-    <div class="main_game">
+    <div class="main_game"> 
         <p>{{ a }} {{ b }} {{ c }} {{ d }} {{ e }} {{ f }}  {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }} </p>
     </div>
+    <input type="text" class="input" value="test" placeholder=" {{ a }} {{ b }} {{ c }} {{ d }} {{ e }} {{ f }}  {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }} ">
 </body>
 </html>

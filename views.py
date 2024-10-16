@@ -7,6 +7,10 @@ views = Blueprint(__name__, "views")
 def home():
     return render_template('index.html', a=a(), b=b(), c=c(), d=d(), e=e(), f=f(), g=g(), h=h(), i=i(), j=j(), k=k(), l=l(),)
 
+@views.route("/typing")
+def typing():
+    return render_template('typing.html')
+
 def a():
     return random.choice([
         "apple", "orange", "garbage", "folder", "cry", "cheese", "gorilla", "kitten", 

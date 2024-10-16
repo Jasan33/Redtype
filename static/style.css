@@ -45,3 +45,16 @@ body {
     background-color: rgba(0, 0, 0, 0.124);
     font-size: 40px;
 }
+
+.input {
+    color: rgb(0, 0, 0);
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 800px;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    border: black solid rgba(10, 0, 0, 10);
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: aliceblue;
+}
