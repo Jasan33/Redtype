@@ -9,12 +9,13 @@ typing is both useful and fun for everyone!
 - Typing speed ⌨
 - leveling system 📈
 - muliplayer 🎮
+- Globlly leaderboard 👑
 - log in/sign in 🙋🏻‍♀️
 - Redtype supporter benefits 💖
 
 
 
 <details>
-  <summary>Want a full documentary? click here</summary>
+  <summary>click here is you Want a full documentary?</summary>
   ## project started 10/14/2024
 </details>
