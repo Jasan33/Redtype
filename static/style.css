@@ -47,14 +47,21 @@ body {
 }
 
 .input {
-    color: rgb(0, 0, 0);
+    text-align: center;
     margin-top: 100px;
     margin-left: 100px;
-    width: 800px;
-    padding: 10px;
-    border-radius: 5px 5px 5px 5px;
-    border: black solid rgba(10, 0, 0, 10);
-    font-size: 20px;
     margin-bottom: 20px;
-    background-color: aliceblue;
+    width: 85%;
+    padding: 20px;
+    border-radius: 20px;
+    border-style: solid;
+    border: rgb(255, 255, 255) solid rgba(10, 10, 10, 10);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.124);
+}
+
+.input ::placeholder-show {
+    color: royalblue;
+    background-color: blue;
 }
