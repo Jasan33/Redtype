@@ -1,16 +1,96 @@
-document.addEventListener('DOMContentLoaded', (event) => { //loades instantly onece HTML is open
-    let words = document.getElementById("words").textContent.split(" "); //calls "words" from html
+var WordCount = parseInt(localStorage.getItem("WordCount")) || 0;
+var CharactersCount = parseInt(localStorage.getItem("characters")) || 0;
+var WpmCount = parseInt(localStorage.getItem("WpmCount")) || 0;
+window.onload = () => {
+    WordCount += -1;
+    const userInput = document.getElementById('userInput');
+    userInput.onpaste = e => e.preventDefault();
+   }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    let words = document.getElementById("words").textContent.split(" ");
     let userInput = document.getElementById("userInput");
 
-    userInput.addEventListener("input", () => {
-        let typed = userInput.value.trim(); //retrives the value from the input
-        let currentWord = words[0];  // Get the first word in the array
+    userInput.addEventListener("input", (e) => {
+        let typed = userInput.value.trim(); // Retrieve the trimmed value from the input
+        let currentWord = words[0];  // Get the first word in the table
+        let removedWord = document.getElementById("words");
+        let start = e.inputType === "insertText"
 
-        if (typed === currentWord) {
+        // Check if the user pressed space (keyCode 32) and the typed word matches the current word
+        // e.inputType === "insertText" checks if input was modified
+        // e.data === " " checks is user pressed space
+        // typed === currentWord ensures that the typed word matches the current word
+        if (e.inputType === "insertText" && e.data === " " && typed === currentWord) {
             // Remove the word from the list and update the display
-            words.shift();  // Remove the first word from the array
-            document.getElementById("words").textContent = words.join(" ");  // Updates displayed words
-            userInput.value = "";  // Clear the input field
+            words.shift();  // Remove the first word from the table
+            userInput.value = "";  // Clear the input
+            removedWord.textContent = words.join(" ");  // Updates displayed words
+            console.log("+1 point");
+            WordCount += 1; 
+            UpdateWordCount();
+            CharactersCount += typed.length;
+            UpdateCharactersCount();
+            WpmCount += CharactersCount;
+            updateWpmCount();
         }
     });
 });
+
+let countdownDuration = 1; // seconds
+function startCountdown() {
+    let countdownElement = document.getElementById('countdown');
+    let timeLeft = countdownDuration;
+
+    // Update the countdown every second
+    let timer = setInterval(function() {
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            countdownElement.innerHTML = "Time's up!";
+            score();
+        } else {
+            countdownElement.innerHTML = timeLeft + " seconds remaining";
+        }
+        timeLeft--;
+    }, 1000);
+}
+
+function score() {
+    let y = document.getElementById("score");
+    let mainContent = document.querySelector('body'); // Select the content to blur
+
+    if (y.classList.contains("show")) {
+        // Fade out the image and remove blur
+        y.style.opacity = '0';
+        setTimeout(function() {
+            y.classList.remove("show");
+            y.style.visibility = 'hidden';
+            mainContent.classList.remove("blur-background");
+        }, 500); // Matches the transition duration
+    } else {
+        // Fade in the image and add blur
+        y.style.visibility = 'visible';
+        y.classList.add("show");
+        y.style.opacity = '1';
+        mainContent.classList.add("blur-background");
+    }
+}
+
+function UpdateWordCount() {
+    console.log("word count updated");
+    var paragraph = document.getElementById("WordCount"); 
+    paragraph.textContent = WordCount;
+}
+
+function updateWpmCount() {
+    console.log(WpmCount);
+    var paragraph = document.getElementById("WpmCount"); 
+    paragraph.textContent = WordCount;
+}
+
+function UpdateCharactersCount() {
+    console.log("character count updated");
+    var paragraph = document.getElementById("CharactersCount"); 
+    paragraph.textContent = CharactersCount;
+}
+
