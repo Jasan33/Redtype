@@ -65,3 +65,46 @@ body {
     color: royalblue;
     background-color: blue;
 }
+
+.stats {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 20px;
+    gap: 100px;
+}
+
+.WordCount {
+    display: flex;
+}
+
+.CharactersCount {
+    display: flex;
+}
+
+.timer {
+    display: flex;
+}
+
+#score {
+    display: flex;
+    gap: 30px;
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.5s ease-out; /* Transition for opacity */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    z-index: 99; /* Higher than any other elements */
+    padding: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.737);
+}
+
+#score.show {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Shows the element */
+}
