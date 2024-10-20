@@ -1,15 +1,24 @@
 from flask import Blueprint, render_template
 import random
+import time
 
 views = Blueprint(__name__, "views")
 
 @views.route("/")
 def home():
-    return render_template('index.html', a=a(), b=b(), c=c(), d=d(), e=e(), f=f(), g=g(), h=h(), i=i(), j=j(), k=k(), l=l(),)
+    return render_template('index.html', a=a(), b=b(), c=c(), d=d(), e=e(), f=f(), g=g(), h=h(), i=i(), j=j(), k=k(), l=l(), timer=timer_countdown())
 
 @views.route("/typing")
 def typing():
     return render_template('typing.html')
+
+@views.route("/timer")
+def timer():
+    countdown = 30
+    while countdown >= 0:
+        time.sleep(1)
+        countdown -= 1
+    return "Time is up!"
 
 def a():
     return random.choice([
@@ -27,7 +36,7 @@ def b():
 
 def c():
     return random.choice([
-        "fish", "compare", "indian", "Norwegian", "english", "french", "swedish", "malyan", 
+        "fish", "compare", "black indian", "Norwegian", "english", "french", "swedish", "malyan", 
         "german", "chinese", "japanese", "spanish", "portuguese", "korean", "russian", 
         "brazilian", "dutch", "greek"
     ])
@@ -46,8 +55,8 @@ def e():
 
 def f():
     return random.choice([
-        "drill", "dop", "deep", "dracula", "drift", "drit", "drop", "dream", "drive", 
-        "dance", "draw", "dig", "deliver", "demand", "deny", "destroy", "design"
+        "jasan drill", "jasan dop", "deep", "jasan dracula", "jasan drift", "jasan drit", "jasan drop", "jasan dream", "jasan drive", 
+        "jasan dance", "jasan draw", "jasan dig", "jasan deliver", "jasan demand", "jasan deny", "jasan destroyer", "jasan design"
     ])
 
 def g():
@@ -85,3 +94,10 @@ def l():
         "it", "that", "these", "these", "these", "these", "this", "that", "these", "these", 
         "those", "such", "another", "anything", "everything", "nothing", "something"
     ])
+
+def timer_countdown():
+    countdown = 30
+    while countdown >= 0:
+        yield countdown
+        time.sleep(1)
+        countdown -= 1
