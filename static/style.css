@@ -35,6 +35,10 @@ body {
     font-size: 25px;
 }
 
+#words {
+    text-shadow: 0px 0px;
+}
+
 .main_game {
     text-align: center;
     margin-top: 15%;
@@ -47,6 +51,7 @@ body {
 }
 
 .input {
+    display: block;
     text-align: center;
     margin-top: 100px;
     margin-left: 100px;
@@ -84,6 +89,10 @@ body {
 
 .timer {
     display: flex;
+}
+
+#countdown {
+    color: whitesmoke;
 }
 
 #score {
