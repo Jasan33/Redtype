@@ -9,6 +9,7 @@ window.onload = () => {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let words = document.getElementById("words").textContent.split(" ");
+    let word = document.getElementById("words");
     let userInput = document.getElementById("userInput");
 
     userInput.addEventListener("input", (e) => {
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (e.inputType === "insertText" && e.data === " " && typed === currentWord) {
             // Remove the word from the list and update the display
             words.shift();  // Remove the first word from the table
+            word.style.textShadow = '1px 1px';
             userInput.value = "";  // Clear the input
             removedWord.textContent = words.join(" ");  // Updates displayed words
             console.log("+1 point");
@@ -31,15 +33,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
             UpdateWordCount();
             CharactersCount += typed.length;
             UpdateCharactersCount();
-            WpmCount += CharactersCount;
+            WpmCount += typed.length/5 * 4;
             updateWpmCount();
         }
     });
 });
 
-let countdownDuration = 1; // seconds
+let countdownDuration = 15; // seconds
+
 function startCountdown() {
     let countdownElement = document.getElementById('countdown');
+    let input = document.getElementById("userInput");
     let timeLeft = countdownDuration;
 
     // Update the countdown every second
@@ -48,7 +52,8 @@ function startCountdown() {
             clearInterval(timer);
             countdownElement.innerHTML = "Time's up!";
             score();
-        } else {
+        }
+        else {
             countdownElement.innerHTML = timeLeft + " seconds remaining";
         }
         timeLeft--;
@@ -83,9 +88,10 @@ function UpdateWordCount() {
 }
 
 function updateWpmCount() {
+    WpmCount * 4;
     console.log(WpmCount);
     var paragraph = document.getElementById("WpmCount"); 
-    paragraph.textContent = WordCount;
+    paragraph.textContent = WpmCount;
 }
 
 function UpdateCharactersCount() {
