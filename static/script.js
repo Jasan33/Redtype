@@ -9,7 +9,6 @@ window.onload = () => {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let words = document.getElementById("words").textContent.split(" ");
-    let word = document.getElementById("words");
     let userInput = document.getElementById("userInput");
 
     userInput.addEventListener("input", (e) => {
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (e.inputType === "insertText" && e.data === " " && typed === currentWord) {
             // Remove the word from the list and update the display
             words.shift();  // Remove the first word from the table
-            word.style.textShadow = '1px 1px';
             userInput.value = "";  // Clear the input
             removedWord.textContent = words.join(" ");  // Updates displayed words
             console.log("+1 point");
@@ -42,6 +40,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 let countdownDuration = 15; // seconds
 
 function startCountdown() {
+    WordHighLight();
     let countdownElement = document.getElementById('countdown');
     let input = document.getElementById("userInput");
     let timeLeft = countdownDuration;
@@ -60,7 +59,13 @@ function startCountdown() {
     }, 1000);
 }
 
+function WordHighLight() {
+    let word = document.getElementById("words");
+    word.style.textShadow = '1px 1px';
+}
+
 function score() {
+    let input = document.getElementById("userInput");
     let y = document.getElementById("score");
     let mainContent = document.querySelector('body'); // Select the content to blur
 
@@ -77,6 +82,7 @@ function score() {
         y.style.visibility = 'visible';
         y.classList.add("show");
         y.style.opacity = '1';
+        input.style.display = 'none';
         mainContent.classList.add("blur-background");
     }
 }
