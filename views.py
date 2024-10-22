@@ -30,8 +30,8 @@ def a():
 
 def b():
     return random.choice([
-        "develop", "It", "should", "shoulders", "arms", "chest", "nack", "if", "oh yea", 
-        "legs", "knees", "elbows", "hands", "head", "toes", "ankles", "hips", "eyes", "ears"
+        "develop", "it", "should", "shoulders", "arms", "chest", "nack", "if", "oh yea", 
+        "legs", "knees", "elbows", "hands", "head", "toes", "ankles", "hips", "eyes", "ears", "boots", "butt",
     ])
 
 def c():
@@ -49,8 +49,8 @@ def d():
 
 def e():
     return random.choice([
-        "sometime", "maybe", "its", "red", "black", "blue", "orange", "yellow", 
-        "green", "purple", "white", "pink", "grey", "silver", "gold", "brown", "violet"
+        "freak", "I hate", "kill", "black", "indian", "purple", "curry eater", "dead", "eat", "deepfry", "murder", "harm", 
+        "slap", "fry", "not", "weak", "small", "thiny", "downfall of", "steal", "bark at", "knock out",
     ])
 
 def f():
@@ -79,8 +79,8 @@ def i():
 
 def j():
     return random.choice([
-        "than", "but", "or", "and", "but", "or", "and", "nor", "not", "or", 
-        "yet", "for", "so", "still", "besides", "either", "neither", "however"
+        "red", "black", "blue", "orange", "yellow", 
+        "green", "purple", "white", "pink", "grey", "silver", "gold", "brown", "violet"
     ])
 
 def k():
@@ -91,8 +91,8 @@ def k():
 
 def l():
     return random.choice([
-        "it", "that", "these", "these", "these", "these", "this", "that", "these", "these", 
-        "those", "such", "another", "anything", "everything", "nothing", "something"
+        "rare", "common", "uncommon", "legendary", "mytical", "star", "moon", "sun", "epic", "classified", 
+        "corrupt", "divine", "ancor", "seen", "better", "gloryfied", "something"
     ])
 
 def timer_countdown():
