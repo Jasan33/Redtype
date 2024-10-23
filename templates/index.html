@@ -21,46 +21,51 @@
     <div class="main_game"> 
         <p id="words">{{ a }} {{ b }} {{ c }} {{ d }} {{ e }} {{ f }} {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }} {{ f }} {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }}</p>
     </div>
+    <div class="timer">
+        <p>Time  = </p> 
+        <div id="countdown">
+             <p></p>
+        </div>
+    </div>
     <input onclick="startCountdown()" type="text" id="userInput" class="input" placeholder="Type here...">
     <div class="stats">
         <div class="WordCount">
-            <p>word count = </p> 
+            <p>Word count = </p> 
             <div id="WordCount">
                  <p> 0 </p>
             </div>
         </div>
         <div class="CharactersCount">
-            <p>characters count = </p> 
+            <p>Characters count = </p> 
             <div id="CharactersCount">
                  <p> 0 </p>
             </div>
-        </div>
-        <div class="timer">
-            <p>time  = </p> 
-            <div id="countdown">
-                 <p></p>
-            </div>
-        </div>
-        
+        </div>        
     </div>
 </body>
 <div id="score">
-    <h1>your stats</h1>
-    <p>wpm = </p>
-    <div id="WpmCount">
-        <p></p>
-    </div>
-    <p>total time = </p>
-    <div>
-        <p>15 sec</p>
-    </div>
-    <p>total words = </p>
-    <div id="WordCountStats">
-        <p></p>
-    </div>
-    <p>total chatacters = </p>
-    <div id="CharactersCountStats">
-        <p></p>
+    <h1>Your stats</h1>
+    <div id="ScoreContent">
+        <div id="StatsLeft">
+            <p>WPM =</p>
+            <div id="WpmCount">
+                <p></p>
+            </div>
+            <p>Total Time =</p>
+            <div>
+                <p>15 sec</p>
+            </div>
+        </div>
+        <div id="StatsRight">
+            <p>Total Words =</p>
+            <div id="WordCountStats">
+                <p></p>
+            </div>
+            <p>Total Chatacters =</p>
+            <div id="CharactersCountStats">
+                <p></p>
+            </div>
+        </div>
     </div>
 </div>
 </html>
