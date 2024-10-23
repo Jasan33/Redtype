@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-let countdownDuration = 15; // seconds
+let countdownDuration = 5; // seconds
 
 function startCountdown() {
     WordHighLight();
