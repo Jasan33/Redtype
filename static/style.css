@@ -41,7 +41,7 @@ body {
 
 .main_game {
     text-align: center;
-    margin-top: 15%;
+    margin-top: 10%;
     width: 80%;
     margin-left: 5%;
     padding: 70px;
@@ -52,7 +52,6 @@ body {
 
 .input {
     text-align: center;
-    margin-top: 100px;
     margin-left: 100px;
     margin-bottom: 20px;
     width: 85%;
@@ -77,6 +76,7 @@ body {
 .stats {
     display: flex;
     margin-top: 50px;
+    padding-bottom: 100px;
     margin-left: 100px;
     font-size: 20px;
     gap: 100px;
@@ -92,6 +92,12 @@ body {
 
 .timer {
     display: flex;
+    gap: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    justify-content: baseline;
+    margin-top: 100px;
+    margin-left: 100px;
 }
 
 #countdown {
@@ -99,8 +105,6 @@ body {
 }
 
 #score {
-    display: flex;
-    gap: 30px;
     opacity: 0; /* Initially invisible */
     visibility: hidden; /* Initially hidden */
     transition: opacity 0.5s ease-out; /* Transition for opacity */
@@ -110,10 +114,24 @@ body {
     transform: translate(-50%, -50%);
     justify-content: center;
     z-index: 99; /* Higher than any other elements */
-    padding: 300px;
+    padding: 150px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.737);
+    background-color: rgba(0, 0, 0, 0.805);
+}
+
+#ScoreContent {
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+}
+
+#StatsLeft {
+    margin: 30px;
+}
+
+#StatsRight {
+    margin: 30px;
 }
 
 #score.show {
