@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-let countdownDuration = 5; // seconds
+let countdownDuration = 15; // seconds
 
 function startCountdown() {
     WordHighLight();
@@ -90,9 +90,9 @@ function score() {
 function UpdateWordCount() {
     console.log("word count updated");
     var paragraph = document.getElementById("WordCount"); 
-    paragraph.textContent = WordCount;
+    paragraph.textContent = " " + WordCount;
     var paragraph2 = document.getElementById("WordCountStats"); 
-    paragraph2.textContent = WordCount;
+    paragraph2.textContent = " " + WordCount;
 }
 
 function updateWpmCount() {
