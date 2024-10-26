@@ -8,64 +8,63 @@
     <script src="{{url_for('static', filename='script.js')}}"></script>
 </head>
 <body>
-    <div class="navbar">
-        <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
-        <div class="menu">
-            <a href="Index.html" class="5" alt="Menu option 1: home">Home</a>
-            <a href="" class="4" alt="Menu option 2: stats">Stats</a>
-            <a href="" class="3" alt="Menu option 3: Settings">Settings</a>
-            <a href="" class="2" alt="Menu option 3: about">About</a>
-            <a href="" class="1" alt="Menu option 4: your profile">Profile</a>
-        </div>
-    </div>
-    <div class="main_game"> 
-        <p id="words">{{ a }} {{ b }} {{ c }} {{ d }} {{ e }} {{ f }} {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }} {{ f }} {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }}</p>
-    </div>
-    <div class="timer">
-        <p>Time  = </p> 
-        <div id="countdown">
-             <p></p>
-        </div>
-    </div>
-    <input onclick="startCountdown()" type="text" id="userInput" class="input" placeholder="Type here...">
-    <div class="stats">
-        <div class="WordCount">
-            <p>Word count = </p> 
-            <div id="WordCount">
-                 <p> 0 </p>
+    <div class="main-content">
+        <div class="navbar">
+            <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
+            <div class="menu">
+                <a href="/" class="5" alt="Menu option 1: home">Home</a>
+                <a href="" class="4" alt="Menu option 2: stats">Stats</a>
+                <a href="" class="3" alt="Menu option 3: Settings">Settings</a>
+                <a href="" class="2" alt="Menu option 3: about">About</a>
+                <a href="" class="1" alt="Menu option 4: your profile">Profile</a>
             </div>
         </div>
-        <div class="CharactersCount">
-            <p>Characters count = </p> 
-            <div id="CharactersCount">
-                 <p> 0 </p>
+        <div class="main_game"> 
+            <p id="words">{{ a }} {{ b }} {{ c }} {{ d }} {{ e }} {{ f }} {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }} {{ f }} {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }}</p>
+        </div>
+        <div class="timer">
+            <div id="countdown">
+                 <p></p>
             </div>
-        </div>        
+            <div><button id="ButtonAddTime" alt="change time">Custom time?</button></div>
+        </div>
+        <input onclick="startCountdown()" type="text" id="userInput" class="input" placeholder="Type here...">
+        <div class="stats">
+            <div class="WordCount">
+                <div id="WordCount">
+                     <p></p>
+                </div>
+            </div>
+            <div class="CharactersCount"> 
+                <div id="CharactersCount">
+                     <p></p>
+                </div>
+            </div>        
+        </div>
     </div>
 </body>
 <div id="score">
     <h1 class="scorestats">Your stats</h1>
     <div id="ScoreContent">
         <div id="StatsLeft">
-            <p>WPM =</p>
             <div id="WpmCount">
                 <p></p>
             </div>
-            <p>Total Time =</p>
-            <div>
-                <p> 15 sec</p>
-            </div>
-        </div>
-        <div id="StatsRight">
-            <p>Total Words =</p>
             <div id="WordCountStats">
                 <p></p>
             </div>
-            <p>Total Chatacters =</p>
+        </div>
+        <div id="StatsRight">
             <div id="CharactersCountStats">
                 <p></p>
             </div>
+            <div>
+                <p id="TimeSpent">Total time: 15 sec</p>
+            </div>
         </div>
+    </div>
+    <div id="ScoreReload">
+        <a href="/" id="retry" alt="retry button">Try Again</a>
     </div>
 </div>
 </html>
