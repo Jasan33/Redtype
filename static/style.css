@@ -9,6 +9,11 @@ body {
     background-color: #707070;
 }
 
+.blur-background {
+    filter: blur(10px); /* Adjust the blur intensity as needed */
+    transition: filter 0.5s ease-out; /* Smooth transition for blur */
+}
+
 .logo {
     border-radius: 15px;
     padding: 10px;
@@ -92,12 +97,30 @@ body {
 
 .timer {
     display: flex;
-    gap: 30px;
+    gap: 75%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     justify-content: baseline;
     margin-top: 100px;
-    margin-left: 100px;
+    margin-left: 115px;
+}
+
+@media (max-width: 1900px) {
+    #ButtonAddTime {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.143);
+        padding: 10px;
+        border-radius: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
+#ButtonAddTime:hover {
+    background-color: rgba(255, 255, 255, 0.286);
+    cursor: pointer;
 }
 
 #countdown {
@@ -113,28 +136,83 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     justify-content: center;
+    padding: 200px 250px; 
     z-index: 99; /* Higher than any other elements */
-    padding: 150px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.805);
+    font-size: 40px;
+    background-color: rgba(255, 255, 255, 0.194);
+    transition: background-color 0.5s ease-out;
+    border-radius: 10px;
 }
 
-#ScoreContent {
-    display: flex;
-    gap: 40px;
-    padding: 30px;
+#score:hover {
+    background-color: rgba(0, 0, 0, 0.906);
+    transition: background-color 0.5s ease-out;
 }
 
-#StatsLeft {
-    margin: 30px;
-}
-
-#StatsRight {
-    margin: 30px;
+.scorestats {
+    margin: -100px;
+    margin-bottom: 50px;
+    margin-left: -40px;
 }
 
 #score.show {
     opacity: 1; /* Fully visible */
     visibility: visible; /* Shows the element */
+}
+
+#StatsLeft {
+    margin: 0px;
+    margin-bottom: 100px;
+}
+
+#StatsRight {
+    margin: -10px;
+    margin-bottom: 100px;
+}
+
+#TimeSpent {
+    color: crimson;
+}
+
+@media (max-width: 1900px) {
+    #StatsLeft {
+        margin: -20px;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 1900px) {
+    #StatsRight {
+        margin: -30px;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 1800px) {
+    #StatsRight {
+        margin: -30px;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 1800px) {
+    #StatsLeft {
+        margin: -20px;
+        margin-bottom: 100px;
+    }
+}
+
+#retry {
+    background-color: rgba(255, 255, 255, 0.143);
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 30px;
+}
+
+#retry:hover {
+    background-color: rgba(255, 255, 255, 0.286);
+    cursor: pointer;
 }
