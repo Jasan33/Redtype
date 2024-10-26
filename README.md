@@ -24,4 +24,5 @@ Typing is both useful and fun for everyone!
 
   10/15/2024
   This day I started with the main game and I learned using flask to combine pythin and HTML. 
+  ![Redtype start](https://github.com/user-attachments/assets/d81d16d6-b657-46a7-8ede-f561aa61eed4)
 </details>
