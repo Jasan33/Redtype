@@ -2,7 +2,12 @@ var WordCount = parseInt(localStorage.getItem("WordCount")) || 0;
 var CharactersCount = parseInt(localStorage.getItem("characters")) || 0;
 var WpmCount = parseInt(localStorage.getItem("WpmCount")) || 0;
 window.onload = () => {
+    let countdownElement = document.getElementById('countdown');
     WordCount += -1;
+    UpdateWordCount();
+    updateWpmCount();
+    UpdateCharactersCount();
+    countdownElement.innerHTML = "15 seconds ";
     const userInput = document.getElementById('userInput');
     userInput.onpaste = e => e.preventDefault();
    }
@@ -38,12 +43,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 let countdownDuration = 15; // seconds
+let countdownElement = document.getElementById('countdown');
 
 function startCountdown() {
     WordHighLight();
-    let countdownElement = document.getElementById('countdown');
     let input = document.getElementById("userInput");
     let timeLeft = countdownDuration;
+    let countdownElement = document.getElementById('countdown');
+    let ButtonAddTime = document.getElementById("ButtonAddTime")
 
     // Update the countdown every second
     let timer = setInterval(function() {
@@ -53,7 +60,8 @@ function startCountdown() {
             score();
         }
         else {
-            countdownElement.innerHTML = timeLeft + " seconds remaining";
+            countdownElement.innerHTML = "Time: " + timeLeft + " seconds remaining";
+            ButtonAddTime.style.display = 'none';
         }
         timeLeft--;
     }, 1000);
@@ -67,7 +75,7 @@ function WordHighLight() {
 function score() {
     let input = document.getElementById("userInput");
     let y = document.getElementById("score");
-    let mainContent = document.querySelector('body'); // Select the content to blur
+    let mainContent = document.querySelector('.main-content'); // Select the content to blur
 
     if (y.classList.contains("show")) {
         // Fade out the image and remove blur
@@ -90,22 +98,26 @@ function score() {
 function UpdateWordCount() {
     console.log("word count updated");
     var paragraph = document.getElementById("WordCount"); 
-    paragraph.textContent = " " + WordCount;
-    var paragraph2 = document.getElementById("WordCountStats"); 
-    paragraph2.textContent = " " + WordCount;
+    paragraph.textContent = "Words: " + WordCount;
+    var paragraph2 = document.getElementById("WordCountStats");
+    paragraph2.style.color = "crimson";
+    paragraph2.style.hover = "crimson";
+    paragraph2.textContent = "Total words: " + WordCount;
 }
 
 function updateWpmCount() {
     WpmCount * 4;
     console.log(WpmCount);
     var paragraph = document.getElementById("WpmCount"); 
-    paragraph.textContent = WpmCount;
+    paragraph.textContent = "wpm: " + WpmCount;
+    paragraph.style.color = "crimson";
 }
 
 function UpdateCharactersCount() {
     console.log("character count updated");
     var paragraph = document.getElementById("CharactersCount"); 
-    paragraph.textContent = CharactersCount;
-    var paragraph2 = document.getElementById("CharactersCountStats"); 
-    paragraph2.textContent = CharactersCount;
+    paragraph.textContent = "Characters: " + CharactersCount;
+    var paragraph2 = document.getElementById("CharactersCountStats");
+    paragraph2.style.color = "crimson";
+    paragraph2.textContent = "Total Characters: " + CharactersCount;
 }
