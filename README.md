@@ -18,11 +18,8 @@ Typing is both useful and fun for everyone!
 <details>
   <summary>click here is you Want a full documentary</summary>
   project started 10/14/2024
-  
-  I started first by making a Redtype logo, then fucussed on the front end of the website, where I made the navbar and a few other components.
-
 
   10/15/2024
-  This day I started with the main game and I learned using flask to combine pythin and HTML. 
+  I started first by making a Redtype logo, then fucussed on the front end of the website, where I made the navbar and a few other components.
   ![Redtype start](https://github.com/user-attachments/assets/d81d16d6-b657-46a7-8ede-f561aa61eed4)
 </details>
