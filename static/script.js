@@ -67,6 +67,17 @@ function startCountdown() {
     }, 1000);
 }
 
+function TimeOption() {
+    let TimeChanger = document.getElementById("TimeChanger");
+    let Button = document.getElementById("ButtonAddTime")
+    if (TimeChanger.style.display === "none") {
+        TimeChanger.style.display = "block";
+        Button.style.display = 'none';
+    } else {
+        TimeChanger.style.display = "none";
+    }
+}
+
 function WordHighLight() {
     let word = document.getElementById("words");
     word.style.textShadow = '1px 1px';
