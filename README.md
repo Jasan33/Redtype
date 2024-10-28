@@ -30,13 +30,13 @@ input field downbelow. Once the countdown reaches 0 it will display your stat.
   ![Redtype before the start](https://github.com/user-attachments/assets/890bfceb-c3ae-4f18-9f88-fd6269d31428)
 
   10/16/2024
-  started with making a Redtype logo (with a few samples)  then I started directly on the main process of making the game
-  I liked the monkeytype's design and took inspiration to great the main game in the middle of the screen. I decided to make the main colors grey and red since its a good match of contrast both comfortable for the eye and for the view.
+  created multiple samples of the redtype logo, then I started directly on the main process of making the game
+  I liked monkeytype's design and took inspiration to creat the main game in the middle of the screen. I decided to make the main colors grey and red since its a good match of contrast both comfortable for the eye and for the overall view.
   ![Redtype start](https://github.com/user-attachments/assets/d81d16d6-b657-46a7-8ede-f561aa61eed4)
   
 
   10/17/2024
-  today I learned using flask and connected it with the website, now I can use python, sql along with HTML, CSS and JS. I latter made added basic python to give random words appear each time you enter the website, using the import randit. The hard part was to connect      CSS, js and the images with python. HTML is no longer the main boss that decides the connections between each language.
+  today I learned using flask and connected it with the website, now I can use python, sql along with HTML, CSS and JS. I later added basic python to make random words appear each time you enter the website, using the import randit. The hard part was to connect CSS, js and the images with python. HTML is no longer the main boss that decides the connections between each language.
   ![word spawn on screen](https://github.com/user-attachments/assets/058379fc-2bc6-4714-8e34-663c25d83152)
 
   10/19/2024
