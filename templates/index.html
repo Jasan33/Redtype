@@ -12,11 +12,22 @@
         <div class="navbar">
             <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
             <div class="menu">
-                <a href="/" class="5" alt="Menu option 1: home">Home</a>
-                <a href="" class="4" alt="Menu option 2: stats">Stats</a>
-                <a href="" class="3" alt="Menu option 3: Settings">Settings</a>
-                <a href="" class="2" alt="Menu option 3: about">About</a>
-                <a href="" class="1" alt="Menu option 4: your profile">Profile</a>
+                <a href="/" class="Home_option" alt="Menu option 1: home">Home</a>
+                <a href="" class="stats_option" alt="Menu option 2: stats">Stats</a>
+                <a href="" class="settings_option" alt="Menu option 3: Settings">Settings</a>
+                <a href="" class="about_option" alt="Menu option 3: about">About</a>
+                <img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()" class="profile_option" alt="Menu option 4: your profile">
+            </div>
+        </div>
+        <div id="profile">
+            <h1>Log in</h1>
+            <div class="log_in_content">
+                <p>Username</p>
+                <input type="text" placeholder="Jasan">
+                <p>Password</p>
+                <input type="password" placeholder="1234">
+                <p>stay loged in?</p>
+                <p>don't have a user?</p> <a>sign in here</a>
             </div>
         </div>
         <div class="main_game"> 
