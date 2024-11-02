@@ -12,6 +12,26 @@ window.onload = () => {
     userInput.onpaste = e => e.preventDefault();
    }
 
+
+function profile() {
+    let y = document.getElementById("profile");
+    let mainContent = document.querySelector('.main-content'); // Select the content to blur
+
+    if (y.classList.contains("show")) {
+        // Fade out the image and remove blur
+        y.style.opacity = '0';
+        setTimeout(function() {
+            y.classList.remove("show");
+            y.style.visibility = 'hidden';
+        }, 500); // Matches the transition duration
+    } else {
+        // Fade in the image and add blur
+        y.style.visibility = 'visible';
+        y.classList.add("show");
+        y.style.opacity = '1';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
     let words = document.getElementById("words").textContent.split(" ");
     let userInput = document.getElementById("userInput");
