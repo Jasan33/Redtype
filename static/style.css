@@ -266,3 +266,56 @@ body {
     background-color: rgba(255, 255, 255, 0.286);
     cursor: pointer;
 }
+
+#cookies {
+    position: relative;
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.5s ease-out; /* Transition for opacity */
+}
+
+.profile_option {
+    width: 5%;
+    margin-top: -25px;
+}
+
+.profile_option:hover {
+    width: 70px;
+    background-color: rgba(255, 255, 255, 0.148);
+    cursor: pointer;
+    border-radius: 60%;
+    transition: background-color 0.2s ease-out;
+}
+
+#cookies.show {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Shows the element */
+    transition: opacity 0.5s ease-out; /* Transition for opacity */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px; 
+    z-index: 99; /* Higher than any other elements */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.194);
+    margin-top: 10px;
+}
+
+#CookieOption {
+    display: flex;
+    gap: 10%;
+}
+
+#CookieAccept {
+    color: black;
+    background-color: white;
+    pad: 25px;
+}
+
+#CookieReject {
+    color: black;
+    background-color: white;
+    pad: 25px;
+}
