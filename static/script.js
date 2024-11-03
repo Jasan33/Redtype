@@ -4,6 +4,7 @@ var WpmCount = parseInt(localStorage.getItem("WpmCount")) || 0;
 window.onload = () => {
     let countdownElement = document.getElementById('countdown');
     WordCount += -1;
+    cookies();
     UpdateWordCount();
     updateWpmCount();
     UpdateCharactersCount();
@@ -84,7 +85,7 @@ function startCountdown() {
             ButtonAddTime.style.display = 'none';
         }
         timeLeft--;
-    }, 1000);
+    }, 1250);
 }
 
 function TimeOption() {
@@ -151,4 +152,26 @@ function UpdateCharactersCount() {
     var paragraph2 = document.getElementById("CharactersCountStats");
     paragraph2.style.color = "crimson";
     paragraph2.textContent = "Total Characters: " + CharactersCount;
+}
+
+function cookies() {
+    let y = document.getElementById("cookies");
+    let mainContent = document.querySelector('.main-content'); // Select the content to blur
+
+    if (y.classList.contains("show")) {
+        // Fade out the image and remove blur
+        y.style.opacity = '0';
+        setTimeout(function() {
+            y.classList.remove("show");
+            y.style.visibility = 'hidden';
+            mainContent.classList.remove("blur-background");
+        }, 500); // Matches the transition duration
+    } else {
+        // Fade in the image and add blur
+        y.style.visibility = 'visible';
+        y.classList.add("show");
+        y.style.opacity = '1';
+        input.style.display = 'none';
+        mainContent.classList.add("blur-background");
+    }
 }
