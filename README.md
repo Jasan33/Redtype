@@ -28,7 +28,7 @@ input field downbelow. Once the countdown reaches 0 it will display your stat.
 
 
 ##  10/14/2024
-  On the first day I started by making a Redtype logo, then fucussed on the front end of the website, where I made the navbar and a few other components. i also made a list of things that I planned on addeing to the website.
+  On the first day I started by making a Redtype logo, after that I fucused on the front part of the website, where I made the navbar and a few other components. i also made a list of things that I planned on doing.
   ![Redtype before the start](https://github.com/user-attachments/assets/890bfceb-c3ae-4f18-9f88-fd6269d31428)
 
 ##  10/16/2024
