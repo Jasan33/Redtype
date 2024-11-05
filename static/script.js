@@ -4,13 +4,13 @@ var WpmCount = parseInt(localStorage.getItem("WpmCount")) || 0;
 window.onload = () => {
     let countdownElement = document.getElementById('countdown');
     WordCount += -1;
-    cookies();
     UpdateWordCount();
     updateWpmCount();
     UpdateCharactersCount();
     countdownElement.innerHTML = "15 seconds ";
     const userInput = document.getElementById('userInput');
     userInput.onpaste = e => e.preventDefault();
+    cookies();
    }
 
 
@@ -85,7 +85,7 @@ function startCountdown() {
             ButtonAddTime.style.display = 'none';
         }
         timeLeft--;
-    }, 1250);
+    }, 1000);
 }
 
 function TimeOption() {
@@ -106,22 +106,22 @@ function WordHighLight() {
 
 function score() {
     let input = document.getElementById("userInput");
-    let y = document.getElementById("score");
+    let score = document.getElementById("score");
     let mainContent = document.querySelector('.main-content'); // Select the content to blur
 
-    if (y.classList.contains("show")) {
+    if (score.classList.contains("show")) {
         // Fade out the image and remove blur
-        y.style.opacity = '0';
+        score.style.opacity = '0';
         setTimeout(function() {
-            y.classList.remove("show");
-            y.style.visibility = 'hidden';
+            score.classList.remove("show");
+            score.style.visibility = 'hidden';
             mainContent.classList.remove("blur-background");
         }, 500); // Matches the transition duration
     } else {
         // Fade in the image and add blur
-        y.style.visibility = 'visible';
-        y.classList.add("show");
-        y.style.opacity = '1';
+        score.style.visibility = 'visible';
+        score.classList.add("show");
+        score.style.opacity = '1';
         input.style.display = 'none';
         mainContent.classList.add("blur-background");
     }
@@ -155,23 +155,24 @@ function UpdateCharactersCount() {
 }
 
 function cookies() {
-    let y = document.getElementById("cookies");
+    let cookies = document.getElementById("cookies");
     let mainContent = document.querySelector('.main-content'); // Select the content to blur
+    let CookieOption = document.getElementById("CookieOption");
 
-    if (y.classList.contains("show")) {
+    if (cookies.classList.contains("show")) {
         // Fade out the image and remove blur
-        y.style.opacity = '0';
+        cookies.style.opacity = '0';
         setTimeout(function() {
-            y.classList.remove("show");
-            y.style.visibility = 'hidden';
+            cookies.classList.remove("show");
+            cookies.style.visibility = 'hidden';
             mainContent.classList.remove("blur-background");
+            CookieOption.style.gap = '0%';
         }, 500); // Matches the transition duration
     } else {
         // Fade in the image and add blur
-        y.style.visibility = 'visible';
-        y.classList.add("show");
-        y.style.opacity = '1';
-        input.style.display = 'none';
+        cookies.style.visibility = 'visible';
+        cookies.classList.add("show");
+        cookies.style.opacity = '1';
         mainContent.classList.add("blur-background");
     }
 }
