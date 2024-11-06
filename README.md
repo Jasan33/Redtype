@@ -48,4 +48,13 @@ input field downbelow. Once the countdown reaches 0 it will display your stat.
 ##  10/20/2024
   The website now has a word and character counter. Adding the word counter wasn't tough, all the javascript had to do was add one on the counter each time the word user entered was correct. the character counter on the other hand was a bit hard to solve, but it turns out that I just needed the user inputs lenght after each correct word. Also connected it with HTML so it displays these stats during the test.
   ![charcters](https://github.com/user-attachments/assets/9ff9e889-af1d-4b16-b045-fcfbadb4e1fc)
+
+##  10/21/2024
+  Today I made the total stats appear on a display screen after each attampt. This screen is avaliale as soon as the timer of the test runs out. It diaplys all the information and it also tells the user their WPN (words per minute). The WPM formula is pretty straight forward, its caracters divided by 5 and then divied that by the time usage in minutes. I still need to make the frontend version for this display, but atleast the backend part works so far
+![stats display after each test](https://github.com/user-attachments/assets/e9afa285-681e-4fdd-af95-eed848143658)
+
+##  10/23/2024
+  On this day I decided to take a break from the backend coding part and fucused more on the frontend part. I designed serveral things all around the websided, but kept it mostly on the display menu. It now has a better view by blurring the backround, adding an     
+aditional hover effect and loads in with a 0.5 cooldown to smooth it in. 
+![fixed the stat display](https://github.com/user-attachments/assets/b1f6ce84-3ac1-43ef-9d3d-e7ee1fab865b)
 </details>
