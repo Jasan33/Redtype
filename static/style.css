@@ -42,11 +42,16 @@ body {
     transition: font-size 0.5s ease-out;
 }
 
-#profile  {
-    position: relative;
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Initially hidden */
-    transition: opacity 0.5s ease-out; /* Transition for opacity */
+.home_option {
+    width: 5%;
+    margin-top: -20px;
+}
+
+.home_option:hover {
+    background-color: rgba(255, 255, 255, 0.148);
+    cursor: pointer;
+    border-radius: 60%;
+    transition: background-color 0.2s ease-out;
 }
 
 .profile_option {
@@ -55,12 +60,19 @@ body {
 }
 
 .profile_option:hover {
-    width: 70px;
     background-color: rgba(255, 255, 255, 0.148);
     cursor: pointer;
     border-radius: 60%;
     transition: background-color 0.2s ease-out;
 }
+
+#profile  {
+    position: relative;
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.5s ease-out; /* Transition for opacity */
+}
+
 
 #profile.show {
     opacity: 1; /* Fully visible */
@@ -143,18 +155,22 @@ body {
     margin-left: 115px;
 }
 
-@media (max-width: 1900px) {
-    #ButtonAddTime {
-        display: block;
-        margin-bottom: 5px;
-        font-size: 20px;
-        background-color: rgba(255, 255, 255, 0.143);
-        padding: 10px;
-        border-radius: 20px;
-        text-decoration: none;
-        text-align: center;
-    }
+#ButtonAddTime {
+    margin-left: -20px;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.143);
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
 }
+
+#ButtonAddTime:active {
+    background-color: rgba(255, 0, 0, 0.384);
+}
+
 
 #ButtonAddTime:hover {
     background-color: rgba(255, 255, 255, 0.286);
@@ -186,7 +202,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     justify-content: center;
-    padding: 200px 250px; 
+    padding: 175px 200px;
     z-index: 99; /* Higher than any other elements */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
@@ -195,15 +211,33 @@ body {
     border-radius: 10px;
 }
 
+@media (max-width: 1650px) {
+    #score {
+        padding: 150px 150px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1050px) {
+    #score {
+        padding: 100px 75px;
+        font-size: 15px;
+    }
+}
+
+
 #score:hover {
     background-color: rgba(0, 0, 0, 0.906);
     transition: background-color 0.5s ease-out;
 }
 
 .scorestats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: -100px;
     margin-bottom: 50px;
-    margin-left: -40px;
+    margin-left: -100px;
 }
 
 #score.show {
@@ -213,11 +247,6 @@ body {
 
 #StatsLeft {
     margin: 0px;
-    margin-bottom: 100px;
-}
-
-#StatsRight {
-    margin: -10px;
     margin-bottom: 100px;
 }
 
@@ -272,19 +301,6 @@ body {
     opacity: 0; /* Initially invisible */
     visibility: hidden; /* Initially hidden */
     transition: opacity 0.5s ease-out; /* Transition for opacity */
-}
-
-.profile_option {
-    width: 5%;
-    margin-top: -25px;
-}
-
-.profile_option:hover {
-    width: 70px;
-    background-color: rgba(255, 255, 255, 0.148);
-    cursor: pointer;
-    border-radius: 60%;
-    transition: background-color 0.2s ease-out;
 }
 
 #cookies.show {
