@@ -138,7 +138,6 @@ function UpdateWordCount() {
 }
 
 function updateWpmCount() {
-    WpmCount * 4;
     console.log(WpmCount);
     var paragraph = document.getElementById("WpmCount"); 
     paragraph.textContent = "wpm: " + WpmCount;
