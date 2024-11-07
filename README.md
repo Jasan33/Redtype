@@ -37,11 +37,11 @@ input field downbelow. Once the countdown reaches 0 it will display your stat.
   
 
 ##  10/17/2024
-  Today I learned using flask and connected it with the website, now I can use python, sql along with HTML, CSS and javascript. I later added some basic python code that makes random words appear on the screen each time you enter the website. This was done using the randit script that selects one from a list of words. The hard part was to connect CSS, javascript and the images with python. HTML is no longer the main boss that decides the connections between each language.
+  Today I learned using flask and connected it with the website, now I can use python, sql along with HTML, CSS and javascript. I also coded inn some basic python that makes randome words pop up on the screen. This also automaticly regenerate each time you refresh the website. The python script was simply done by using the randit command that can select one from a list of words. The hard part was to connect CSS, javascript and the images with python. HTML is no longer the main boss that decides the connections.
   ![word spawn on screen](https://github.com/user-attachments/assets/058379fc-2bc6-4714-8e34-663c25d83152)
 
 ##  10/19/2024
-  Using javascript today I made the user able to type the words that appeared on the screen. This wasn't hard as I expected, all I had to do was make the javascript able to catch the user input and then check if the input matches with the displayed word. I needed to use a bit of chatGPT since I didn't know how to make this happen at a instant. ChatGPT explaind very well to me and I now know what DOM does.
+  Using javascript today I made the user able to type the words that appeared on the screen. I expected this to be a extreme task, but it actully wasn't so advanced. All I had to do was make the javascript able to catch the user input and then check if the input matches with the displayed word. I used internett and ai tools like chatGPT since I didn't know how to make this happen at a instant. ChatGPT explaind very well to me and I now know how to use the DOM in javascript.
   ![word spawn](https://github.com/user-attachments/assets/85b5327b-8c80-4a7b-a77b-4fa64aeff734)
   
 
