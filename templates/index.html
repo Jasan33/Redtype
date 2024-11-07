@@ -12,7 +12,7 @@
         <div class="navbar">
             <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
             <div class="menu">
-                <a href="/" class="Home_option" alt="Menu option 1: home">Home</a>
+                <img src="{{ url_for('static', filename='images/home.png') }}" onclick="home()" class="home_option" alt="Menu option 1: go to home">
                 <a href="" class="stats_option" alt="Menu option 2: stats">Stats</a>
                 <a href="" class="settings_option" alt="Menu option 3: Settings">Settings</a>
                 <a href="" class="about_option" alt="Menu option 3: about">About</a>
