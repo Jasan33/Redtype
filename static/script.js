@@ -3,14 +3,13 @@ var CharactersCount = parseInt(localStorage.getItem("characters")) || 0;
 var WpmCount = parseInt(localStorage.getItem("WpmCount")) || 0;
 window.onload = () => {
     let countdownElement = document.getElementById('countdown');
-    WordCount += -1;
     UpdateWordCount();
     updateWpmCount();
     UpdateCharactersCount();
     countdownElement.innerHTML = "15 seconds ";
     const userInput = document.getElementById('userInput');
     userInput.onpaste = e => e.preventDefault();
-    cookies();
+    CheckCookies();
    }
 
 
@@ -138,9 +137,9 @@ function UpdateWordCount() {
 }
 
 function updateWpmCount() {
-    console.log(WpmCount);
+    console.log(WpmCount.toFixed(0));
     var paragraph = document.getElementById("WpmCount"); 
-    paragraph.textContent = "wpm: " + WpmCount;
+    paragraph.textContent = "wpm: " + WpmCount.toFixed(0);
     paragraph.style.color = "crimson";
 }
 
@@ -153,7 +152,19 @@ function UpdateCharactersCount() {
     paragraph2.textContent = "Total Characters: " + CharactersCount;
 }
 
+function CheckCookies() {
+    let cookiesDisplay = document.getElementById("cookies");
+
+    if (value = localStorage.getItem('cookies')) {
+        console.log("cookies are enabled");
+        cookiesDisplay.style.display = "none";
+    } else {
+        cookies();
+    }    
+}
+
 function cookies() {
+    localStorage.setItem('cookies', 'removed');
     let cookies = document.getElementById("cookies");
     let mainContent = document.querySelector('.main-content'); // Select the content to blur
     let CookieOption = document.getElementById("CookieOption");
