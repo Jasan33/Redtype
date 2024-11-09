@@ -5,11 +5,15 @@ In this website, you can test your word typing speed, compete with others, check
 
 Typing is both useful and fun for everyone!
 
-How the game works:
-This game uses wpm to determain speed, it stands for "words per minute" and it used to descripe
-how fast someone can type. Typing speed can be improved by the more you play. In this game you
-will see some randome words pop up infront of you and you have to type them correctly in the
-input field downbelow. Once the countdown reaches 0 it will display your stat.
+### How the game works:
+This game uses wpm to determain speed, wpm stands simply for "words per minute" and its used to descripe
+how fast a user can type. Typing speed can always be improved by the more you play. Once you enter the website you will
+see some randomized words pop up in a screen. Below this screen is an input field where you can start the test. Once the
+timer hits 0 seconds it will automatically stop the game and display your results. 
+
+## Whats new?
+- Randomized words
+- Statics after each test
 
 ## coming soon!
 - Log in/sign in option 🙋🏻‍♀️
@@ -28,11 +32,11 @@ input field downbelow. Once the countdown reaches 0 it will display your stat.
 
 
 ##  10/14/2024
-  On the first day I started by making a Redtype logo, after that I fucused on the front part of the website, where I made the navbar and a few other components. i also made a list of things that I planned on doing.
+  From the beginning of the projct I started by writing down some notes and making a kanban board of the plan. I later started by making a Redtype logo. I then decided to make a webside and fucused on the front part of the website, where I made the navbar and a few other components.
   ![Redtype before the start](https://github.com/user-attachments/assets/890bfceb-c3ae-4f18-9f88-fd6269d31428)
 
 ##  10/16/2024
-  On this wednesday I created multiple samples of the redtype logo just in case it needed a change, then I started directly on the main process of making the game. I liked monkeytype's design and took inspiration to creat the main game in the middle of the screen (https://monkeytype.com). I decided to make the main colors grey and red since its a good match of contrast both and its overall a unik usage.
+  On this wednesday I created multiple samples of the redtype logo just in case it needed a change, then I started directly on the main process of making the game. I liked monkeytype's design and took inspiration to creat the main game in the middle of the screen (https://monkeytype.com). I decided to make the main colors grey and red since its a good match of contrast and its overall a unic design.
   ![Redtype start](https://github.com/user-attachments/assets/d81d16d6-b657-46a7-8ede-f561aa61eed4)
   
 
