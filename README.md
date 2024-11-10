@@ -17,9 +17,10 @@ timer hits 0 seconds it will automatically stop the game and display your result
 
 ## coming soon!
 - Log in/sign in option 🙋🏻‍♀️
+- Accessible anywhere 🌍
 - Leveling system 📈
 - Muliplayer 🎮
-- Globlly leaderboard 👑
+- Globl leaderboard 👑
 - Daily Quests 📝
 - Redtype supporter benefits 💕
 
