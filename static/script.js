@@ -39,8 +39,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     userInput.addEventListener("input", (e) => {
         let typed = userInput.value.trim(); // Retrieve the trimmed value from the input
         let currentWord = words[0];  // Get the first word in the table
+        let currentLength = words[0].length;
         let removedWord = document.getElementById("words");
         let start = e.inputType === "insertText"
+        let color = document.getElementById("userInput");
 
         // Check if the user pressed space (keyCode 32) and the typed word matches the current word
         // e.inputType === "insertText" checks if input was modified
@@ -59,8 +61,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
             WpmCount += typed.length/5 * 4;
             updateWpmCount();
         }
+        if (e.inputType === "insertText" && e.data === currentWord.length) {
+            color.style.color = "red";
+        } else {
+            color.style.color = "white";
+        }
     });
 });
+
+function timeuse() {
+    let useage = timeLeft/60
+}
 
 let countdownDuration = 15; // seconds
 let countdownElement = document.getElementById('countdown');
