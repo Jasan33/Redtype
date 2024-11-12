@@ -127,11 +127,6 @@ body {
     display: block;
 }
 
-.input ::placeholder-show {
-    color: royalblue;
-    background-color: blue;
-}
-
 .stats {
     display: flex;
     margin-top: 50px;
