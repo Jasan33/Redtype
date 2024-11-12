@@ -21,14 +21,15 @@
         </div>
         <div id="profile">
             <h1>Log in</h1>
-            <div class="log_in_content">
-                <p>Username</p>
-                <input type="text" placeholder="Jasan">
-                <p>Password</p>
-                <input type="password" placeholder="1234">
+            <form class="log_in_content" action="/" method="post">
+                <label for="username">Username</p>
+                <input name="username" type="text" placeholder="Jasan" required>
+                <label for="password">Password</label>
+                <input name="passowrd" type="password" placeholder="1234" required>
+                <button type="submit">Login</button>
                 <p>stay loged in?</p>
                 <p>don't have a user?</p> <a>sign in here</a>
-            </div>
+            </form>
         </div>
         <div class="main_game"> 
             <p id="words">{{ a }} {{ b }} {{ c }} {{ d }} {{ e }} {{ f }} {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }} {{ f }} {{ g }} {{ h }} {{ i }} {{ j }} {{ k }} {{ l }}</p>
