@@ -5,6 +5,7 @@ window.onload = () => {
     let countdownElement = document.getElementById('countdown');
     UpdateWordCount();
     updateWpmCount();
+    localStorage.setItem('UserIsReady', 'yes')
     UpdateCharactersCount();
     countdownElement.innerHTML = "15 seconds ";
     const userInput = document.getElementById('userInput');
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let removedWord = document.getElementById("words");
         let start = e.inputType === "insertText"
         let color = document.getElementById("userInput");
+        let game = document.getElementById("userInput");
 
         // Check if the user pressed space (keyCode 32) and the typed word matches the current word
         // e.inputType === "insertText" checks if input was modified
@@ -54,26 +56,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
             userInput.value = "";  // Clear the input
             removedWord.textContent = words.join(" ");  // Updates displayed words
             console.log("+1 point");
+            GameColor();
             WordCount += 1; 
             UpdateWordCount();
             CharactersCount += typed.length;
             UpdateCharactersCount();
             WpmCount += typed.length/5 * 4;
             updateWpmCount();
+        } else {
+            game.style.backgroundColor = "rgba(0, 0, 0, 0.124";
         }
-        if (e.inputType === "insertText" && e.data === currentWord.length) {
+        if (e.inputType === "insertText" && e.data === " " && typed.length < currentLength) {
+            userInput.value = ""; 
             color.style.color = "red";
+            game.style.backgroundColor = "rgba(229, 12, 12, 0.139)";
         } else {
             color.style.color = "white";
         }
+        if (e.inputType === "insertText") {
+            UserReady();
+        }
     });
 });
+
+function UserReady() {
+    if (value = localStorage.getItem('UserIsReady')) {
+        startCountdown();
+        localStorage.removeItem('UserIsReady');
+    } 
+}
+
+function GameColor() {
+    let game = document.getElementById("userInput");
+
+    game.style.backgroundColor = "rgba(45, 229, 12, 0.079)";
+    game.style.transform = "opacity 0.001s ease-in-out";
+    game.style.transition = "background-color 0.001s ease-in-out";
+}
 
 function timeuse() {
     let useage = timeLeft/60
 }
 
-let countdownDuration = 15; // seconds
+let countdownDuration = 60; // seconds
 let countdownElement = document.getElementById('countdown');
 
 function startCountdown() {
