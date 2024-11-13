@@ -31,7 +31,7 @@
                 <p>don't have a user?</p> <a>sign in here</a>
             </form>
         </div>
-        <div class="main_game"> 
+        <div class="main_game" id="game"> 
             <p id="words">{{ words }}</p>
         </div>
         <div class="timer">
@@ -41,7 +41,7 @@
             <input id="TimeChanger" type="text" placeholder="15">
             <div><button onclick="TimeOption()" id="ButtonAddTime" alt="change time">Custom time?</button></div>
         </div>
-        <input onclick="startCountdown()" type="text" id="userInput" class="input" placeholder="Type here...">
+        <input onclick="startCountdown()" autofocus type="text" id="userInput" class="input" placeholder="Type here...">
         <div class="stats">
             <div class="WordCount">
                 <div id="WordCount">
