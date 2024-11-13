@@ -251,6 +251,7 @@ body {
 
 #TimeSpent {
     color: crimson;
+    margin-bottom: 5%;
 }
 
 @media (max-width: 1900px) {
@@ -287,7 +288,8 @@ body {
     border-radius: 20px;
     text-decoration: none;
     text-align: center;
-    margin-left: 30px;
+    margin: 20%;
+    margin-top: -50px;
 }
 
 #retry:hover {
