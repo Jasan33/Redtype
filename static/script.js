@@ -98,7 +98,7 @@ function timeuse() {
     let useage = timeLeft/60
 }
 
-let countdownDuration = 60; // seconds
+let countdownDuration = 15; // seconds
 let countdownElement = document.getElementById('countdown');
 
 function startCountdown() {
