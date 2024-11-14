@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (e.inputType === "insertText" && e.data === " " && typed.length < currentLength) {
             userInput.value = ""; 
             color.style.color = "red";
-            game.style.backgroundColor = "rgba(229, 12, 12, 0.139)";
+            game.style.backgroundColor = "rgba(229, 12, 12, 0.075)";
         } else {
             color.style.color = "white";
         }
@@ -89,7 +89,7 @@ function UserReady() {
 function GameColor() {
     let game = document.getElementById("userInput");
 
-    game.style.backgroundColor = "rgba(45, 229, 12, 0.079)";
+    game.style.backgroundColor = "rgba(45, 229, 12, 0.075)";
     game.style.transform = "opacity 0.001s ease-in-out";
     game.style.transition = "background-color 0.001s ease-in-out";
 }
