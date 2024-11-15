@@ -107,6 +107,7 @@ function startCountdown() {
     let timeLeft = countdownDuration;
     let countdownElement = document.getElementById('countdown');
     let ButtonAddTime = document.getElementById("ButtonAddTime")
+    let CountDownStyle = document.getElementById("countdown") 
 
     // Update the countdown every second
     let timer = setInterval(function() {
@@ -116,8 +117,9 @@ function startCountdown() {
             score();
         }
         else {
-            countdownElement.innerHTML = "Time: " + timeLeft + " seconds remaining";
+            countdownElement.innerHTML = timeLeft + " seconds remaining";
             ButtonAddTime.style.display = 'none';
+            CountDownStyle.style.marginBottom = '18px';
         }
         timeLeft--;
     }, 1000);
