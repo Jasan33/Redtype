@@ -36,6 +36,10 @@ timer hits 0 seconds it will automatically stop the game and display your result
   From the beginning of the projct I started by writing down some notes and making a kanban board of the plan. I later started by making a Redtype logo. I then decided to make a webside and fucused on the front part of the website, where I made the navbar and a few other components.
   ![Redtype before the start](https://github.com/user-attachments/assets/890bfceb-c3ae-4f18-9f88-fd6269d31428)
 
+##  10/15/2024
+  Made a figma template that displays my vision for the website. 
+  ![Redtype](https://github.com/user-attachments/assets/3a9b9355-b2d1-4f70-b7e9-d387eb1a3076)
+
 ##  10/16/2024
   On this wednesday I created multiple samples of the redtype logo just in case it needed a change, then I started directly on the main process of making the game. I liked monkeytype's design and took inspiration to creat the main game in the middle of the screen (https://monkeytype.com). I decided to make the main colors grey and red since its a good match of contrast and its overall a unic design.
   ![Redtype start](https://github.com/user-attachments/assets/d81d16d6-b657-46a7-8ede-f561aa61eed4)
@@ -48,7 +52,7 @@ timer hits 0 seconds it will automatically stop the game and display your result
 ##  10/19/2024
   Using javascript today I made the user able to type the words that appeared on the screen. I expected this to be a extreme task, but it actully wasn't so advanced. All I had to do was make the javascript able to catch the user input and then check if the input matches with the displayed word. I used internett and ai tools like chatGPT since I didn't know how to make this happen at a instant. ChatGPT explaind very well to me and I now know how to use the DOM in javascript.
   ![word spawn](https://github.com/user-attachments/assets/85b5327b-8c80-4a7b-a77b-4fa64aeff734)
-  
+
 
 ##  10/20/2024
   The website now has a word and character counter. Adding the word counter wasn't tough, all the javascript had to do was add one on the counter each time the word user entered was correct. the character counter on the other hand was a bit hard to solve, but it turns out that I just needed the user inputs lenght after each correct word. Also connected it with HTML so it displays these stats during the test.
