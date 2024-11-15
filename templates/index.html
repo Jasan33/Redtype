@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redtype</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{url_for('static', filename='script.js')}}"></script>
 </head>
 <body>
     <div class="main-content">
@@ -13,9 +12,9 @@
             <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
             <div class="menu">
                 <img src="{{ url_for('static', filename='images/home.png') }}" onclick="home()" class="home_option" alt="Menu option 1: go to home">
-                <a href="" class="stats_option" alt="Menu option 2: stats">Stats</a>
-                <a href="" class="settings_option" alt="Menu option 3: Settings">Settings</a>
-                <a href="" class="about_option" alt="Menu option 3: about">About</a>
+                <img src="{{ url_for('static', filename='images/stats.png') }}" onclick="home()" class="home_option" alt="Menu option 1: go to home">
+                <img src="{{ url_for('static', filename='images/settings.png') }}" onclick="home()" class="home_option" alt="Menu option 1: go to home">
+                <img src="{{ url_for('static', filename='images/about.png') }}" onclick="home()" class="home_option" alt="Menu option 1: go to home">
                 <img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()" class="profile_option" alt="Menu option 4: your profile">
             </div>
         </div>
@@ -41,7 +40,7 @@
             <input id="TimeChanger" type="text" placeholder="15">
             <div><button onclick="TimeOption()" id="ButtonAddTime" alt="change time">Custom time?</button></div>
         </div>
-        <input onclick="startCountdown()" autofocus type="text" id="userInput" class="input" placeholder="Type here...">
+        <input autofocus type="text" id="userInput" class="input" placeholder="Type here...">
         <div class="stats">
             <div class="WordCount">
                 <div id="WordCount">
@@ -55,44 +54,45 @@
             </div>        
         </div>
     </div>
+    <div id="score">
+        <h1 class="scorestats">Your stats</h1>
+        <div id="ScoreContent">
+            <div id="StatsLeft">
+                <div id="WpmCount">
+                    <p></p>
+                </div>
+                <div id="WordCountStats">
+                    <p></p>
+                </div>
+            </div>
+            <div id="StatsRight">
+                <div id="CharactersCountStats">
+                    <p></p>
+                </div>
+                <div>
+                    <p id="TimeSpent">Total time: 15 sec</p>
+                </div>
+            </div>
+        </div>
+        <div id="ScoreReload">
+            <a href="/" id="retry" alt="retry button">Try Again</a>
+        </div>
+    </div>
+    <div id="cookies">
+        <h1>We use cookies to improve data</h1>
+        <p>We steal all your time & data on this website to improve our data</p>
+        <p>please give us all of your data if you know your best.........</p>
+        <p>we promis that we most likely won't do anything with your data,</p>
+        <p>but that's not a guarante keep this in your mind as you proceed</p>
+        <div id="CookieOption">
+            <div id="CookieAccept">
+                <button onclick="cookies()" id="AcceptCookies" alt="accept cookies button">Accept Cookies</button>
+            </div>
+            <div id="CookieReject">
+                <button onclick="cookies()" id="RejectCookies" alt="Reject cookies button">Reject Cookies</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
 </body>
-<div id="score">
-    <h1 class="scorestats">Your stats</h1>
-    <div id="ScoreContent">
-        <div id="StatsLeft">
-            <div id="WpmCount">
-                <p></p>
-            </div>
-            <div id="WordCountStats">
-                <p></p>
-            </div>
-        </div>
-        <div id="StatsRight">
-            <div id="CharactersCountStats">
-                <p></p>
-            </div>
-            <div>
-                <p id="TimeSpent">Total time: 15 sec</p>
-            </div>
-        </div>
-    </div>
-    <div id="ScoreReload">
-        <a href="/" id="retry" alt="retry button">Try Again</a>
-    </div>
-</div>
-<div id="cookies">
-    <h1>We use cookies to improve data</h1>
-    <p>We steal all your time & data on this website to improve our data</p>
-    <p>please give us all of your data if you know your best.........</p>
-    <p>we promis that we most likely won't do anything with your data,</p>
-    <p>but that's not a guarante keep this in your mind as you proceed</p>
-    <div id="CookieOption">
-        <div id="CookieAccept">
-            <button onclick="cookies()" id="AcceptCookies" alt="accept cookies button">Accept Cookies</button>
-        </div>
-        <div id="CookieReject">
-            <button onclick="cookies()" id="RejectCookies" alt="Reject cookies button">Reject Cookies</button>
-        </div>
-    </div>
-</div>
 </html>
