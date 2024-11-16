@@ -11,24 +11,12 @@
         <div class="navbar">
             <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
             <div class="menu">
-                <img src="{{ url_for('static', filename='images/home.png') }}" onclick="home()" class="home_option" alt="Menu option 1: go to home">
-                <img src="{{ url_for('static', filename='images/stats.png') }}" onclick="home()" class="home_option" alt="Menu option 1: go to home">
-                <img src="{{ url_for('static', filename='images/settings.png') }}" onclick="home()" class="home_option" alt="Menu option 1: go to home">
-                <img src="{{ url_for('static', filename='images/about.png') }}" onclick="home()" class="home_option" alt="Menu option 1: go to home">
-                <img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()" class="profile_option" alt="Menu option 4: your profile">
+                <img src="{{ url_for('static', filename='images/home.png') }}" class="Menu_home" onclick="home()" alt="Menu option 1: go to home">
+                <img src="{{ url_for('static', filename='images/stats.png') }}" class="Menu_stats"  onclick="home()" alt="Menu option 2: go to stats">
+                <img src="{{ url_for('static', filename='images/settings.png') }}" onclick="home()" alt="Menu option 3: go to settings">
+                <img src="{{ url_for('static', filename='images/about.png') }}" onclick="home()" alt="Menu option 4: go to about me">
+                <img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()" alt="Menu option 5: log inn or sign up">
             </div>
-        </div>
-        <div id="profile">
-            <h1>Log in</h1>
-            <form class="log_in_content" action="/" method="post">
-                <label for="username">Username</p>
-                <input name="username" type="text" placeholder="Jasan" required>
-                <label for="password">Password</label>
-                <input name="passowrd" type="password" placeholder="1234" required>
-                <button type="submit">Login</button>
-                <p>stay loged in?</p>
-                <p>don't have a user?</p> <a>sign in here</a>
-            </form>
         </div>
         <div class="main_game" id="game"> 
             <p id="words">{{ words }}</p>
