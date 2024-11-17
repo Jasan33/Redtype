@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         } else {
             game.style.backgroundColor = "rgba(0, 0, 0, 0.124";
         }
+        if (e.data === " ") {
+            userInput.value = "";
+        }
         if (e.inputType === "insertText" && e.data === " " && typed.length < currentLength) {
             userInput.value = ""; 
             color.style.color = "red";
