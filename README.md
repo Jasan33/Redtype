@@ -1,4 +1,4 @@
-# Welcome to Redtype
+align="center"> # Welcome to Redtype </h1>
 The offcial Redtype website
 
 In this website, you can test your word typing speed, compete with others, check your globally ranking and imporove your typing.
