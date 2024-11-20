@@ -10,7 +10,7 @@ def home():
     return render_template('index.html', words=" ".join(words))  # Pass as a single string
 
 def select_words():
-    # Select 15 words from category 'a' and 15 from 'b'
+    # Select 45 words from category 'a'
     words = random.sample(word_categories['a'], 45)
     random.shuffle(words)  # Shuffle words for variety
     return words
