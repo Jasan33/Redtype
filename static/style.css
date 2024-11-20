@@ -16,23 +16,18 @@ body {
 
 .navbar {
     display: flex;
-    gap: 60%;
-    margin: 2%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2%;
 }
 
 .menu {
     display: flex;
-    width: 48px;
-    height: 48px;
-    gap: 100%;
-    margin-top: 30px;
+    gap: 20px;
+    height: 100%;
 }
 
-.Menu_home:hover {
-    cursor: pointer;
-}
-
-.Menu_stats:hover {
+.menu img {
     cursor: pointer;
 }
 
