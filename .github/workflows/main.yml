@@ -22,3 +22,7 @@ jobs:
           git pull origin main
           git clean -fd
           git status
+          source ./.venv/bin/activate
+          pip install -r requirements.txt
+          deactivate
+          sudo systemctl restart redtype
