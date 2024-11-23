@@ -14,34 +14,59 @@ body {
     transition: filter 0.5s ease-out; /* Smooth transition for blur */
 }
 
+a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 2%;
+    padding: 50px 5%;
+    height: 64px;
+    margin-bottom: 10px;
 }
 
 .menu {
     display: flex;
-    gap: 20px;
-    height: 100%;
+    gap: 30px;
+    height: 75%;
 }
 
-.menu img {
+.menu img:hover {
     cursor: pointer;
 }
 
-#words {
-    text-shadow: 0px 0px;
+#profile {
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.5s ease-out; /* Transition for opacity */
+}
+
+#profile.show {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Shows the element */
+    transition: opacity 0.5s ease-out; /* Transition for opacity */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: justify;
+    margin-left: 4.5%;
+    margin-right: 4.5%;
+    padding: 75px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.124);
+    font-size: 40px;
 }
 
 .main_game {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     text-align: justify;
-    margin-left: 5.5%;
-    margin-top: 25px;
-    width: 80%;
+    margin-left: 4.5%;
+    margin-right: 4.5%;
     padding: 75px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.124);
@@ -49,14 +74,16 @@ body {
 }
 
 .input {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
-    margin-left: 100px;
+    margin-left: 4.5%;
+    margin-right: 4.5%;
     margin-bottom: 20px;
-    width: 85%;
+    width: 88.3%;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: solid;
-    border: rgb(255, 255, 255) solid rgba(10, 10, 10, 10);
     color: rgb(255, 255, 255);
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.124);
@@ -64,6 +91,55 @@ body {
 
 #userInput {
     display: block;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4.5%;
+    margin-right: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin-top: 100px;
+}
+
+#ButtonAddTime {
+    display: flex;
+    color: aliceblue;
+    margin-bottom: 5px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.143);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#ButtonAddTime:active {
+    background-color: rgba(255, 0, 0, 0.384);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#ButtonAddTime:hover {
+    background-color: rgba(255, 255, 255, 0.286);
+    cursor: pointer;
+}
+
+#TimeChanger {
+    display: none;
+    justify-content: space-between;
+    color: aliceblue;
+    margin-bottom: 5px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.143);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#countdown {
+    color: whitesmoke;
 }
 
 .stats {
@@ -83,100 +159,42 @@ body {
     display: flex;
 }
 
-.timer {
-    display: flex;
-    gap: 75%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    justify-content: baseline;
-    margin-top: 100px;
-    margin-left: 115px;
-}
-
-#ButtonAddTime {
-    color: aliceblue;
-    margin-left: -20px;
-    display: block;
-    margin-bottom: 5px;
-    font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.143);
-    padding: 10px;
-    border-radius: 20px;
-    text-decoration: none;
-    text-align: center;
-}
-
-#ButtonAddTime:active {
-    background-color: rgba(255, 0, 0, 0.384);
-}
-
-
-#ButtonAddTime:hover {
-    background-color: rgba(255, 255, 255, 0.286);
-    cursor: pointer;
-}
-
-#TimeChanger {
-    display: none;
-    text-align: center;
-    background-color: #ffffffaf;
-    color: rgba(0, 0, 0, 0.678);
-    font-size: 20px;
-    border-radius: 5px;
-    width: 150px;
-    height: 50px;
-    border-color: crimson;
-}
-
-#countdown {
-    color: whitesmoke;
-}
-
 #score {
     opacity: 0; /* Initially invisible */
     visibility: hidden; /* Initially hidden */
-    transition: opacity 0.5s ease-out; /* Transition for opacity */
+    transition: opacity, background-color 0.5s ease-out; /* Transition for opacity and background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
     position: fixed;
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    justify-content: center;
-    padding: 175px 200px;
+    padding: 100px 200px;
     z-index: 99; /* Higher than any other elements */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
-    background-color: rgba(255, 255, 255, 0.194);
-    transition: background-color 0.5s ease-out;
+    background-color: rgba(255, 255, 255, 0.289);
     border-radius: 10px;
 }
 
-@media (max-width: 1650px) {
-    #score {
-        padding: 150px 150px;
-        font-size: 30px;
-    }
+
+
+#StatsLeft, #StatsRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width: 1050px) {
-    #score {
-        padding: 100px 75px;
-        font-size: 15px;
-    }
+#ScoreReload {
+    text-decoration: none;
 }
-
 
 #score:hover {
     background-color: rgba(0, 0, 0, 0.906);
     transition: background-color 0.5s ease-out;
-}
-
-.scorestats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: -100px;
-    margin-bottom: 50px;
-    margin-left: -100px;
 }
 
 #score.show {
@@ -184,58 +202,6 @@ body {
     visibility: visible; /* Shows the element */
 }
 
-#StatsLeft {
-    margin: 0px;
-    margin-bottom: 100px;
-}
-
-#TimeSpent {
-    color: crimson;
-    margin-bottom: 5%;
-}
-
-@media (max-width: 1900px) {
-    #StatsLeft {
-        margin: -20px;
-        margin-bottom: 100px;
-    }
-}
-
-@media (max-width: 1900px) {
-    #StatsRight {
-        margin: -30px;
-        margin-bottom: 100px;
-    }
-}
-
-@media (max-width: 1800px) {
-    #StatsRight {
-        margin: -30px;
-        margin-bottom: 100px;
-    }
-}
-
-@media (max-width: 1800px) {
-    #StatsLeft {
-        margin: -20px;
-        margin-bottom: 100px;
-    }
-}
-
-#retry {
-    background-color: rgba(255, 255, 255, 0.143);
-    padding: 10px;
-    border-radius: 20px;
-    text-decoration: none;
-    text-align: center;
-    margin: 20%;
-    margin-top: -50px;
-}
-
-#retry:hover {
-    background-color: rgba(255, 255, 255, 0.286);
-    cursor: pointer;
-}
 
 #cookies {
     display: block;
