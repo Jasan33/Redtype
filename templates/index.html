@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="x-icon" href="{{ url_for('static', filename='images/Redtype_mini_logo.png') }}"
+    <link rel="shortcut icon" type="x-icon" href="{{ url_for('static', filename='images/Redtype_mini_logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redtype</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -13,11 +13,18 @@
             <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
             <div class="menu">
                 <img src="{{ url_for('static', filename='images/home.png') }}" class="Menu_home" onclick="home()" alt="Menu option 1: go to home">
-                <img src="{{ url_for('static', filename='images/stats.png') }}" class="Menu_stats"  onclick="home()" alt="Menu option 2: go to stats">
-                <img src="{{ url_for('static', filename='images/settings.png') }}" onclick="home()" alt="Menu option 3: go to settings">
-                <img src="{{ url_for('static', filename='images/about.png') }}" onclick="home()" alt="Menu option 4: go to about me">
+                <img src="{{ url_for('static', filename='images/stats.png') }}" class="Menu_stats"  alt="Menu option 2: go to stats">
+                <img src="{{ url_for('static', filename='images/settings.png') }}" alt="Menu option 3: go to settings">
+                <img src="{{ url_for('static', filename='images/about.png') }}"  alt="Menu option 4: go to about me">
                 <img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()" alt="Menu option 5: log inn or sign up">
             </div>
+        </div>
+        <div id="profile">
+            <p>Welcome to Redtype!</p>
+            <p>Please enter your name:</p>
+            <input type="text" id="username" placeholder="Enter your name">
+            <input type="text" id="username" placeholder="Enter your username">
+            <input type="text" id="username" placeholder="Enter your mail">
         </div>
         <div class="main_game" id="game"> 
             <p id="words">{{ words }}</p>
@@ -29,7 +36,7 @@
             <input id="TimeChanger" type="text" placeholder="15">
             <div><button onclick="TimeOption()" id="ButtonAddTime" alt="change time">Custom time?</button></div>
         </div>
-        <input autofocus type="text" id="userInput" class="input" placeholder="Type here...">
+        <input autofocus type="text" id="userInput" class="input">
         <div class="stats">
             <div class="WordCount">
                 <div id="WordCount">
