@@ -15,21 +15,20 @@ window.onload = () => {
 
 
 function profile() {
-    let y = document.getElementById("profile");
-    let mainContent = document.querySelector('.main-content'); // Select the content to blur
+    let profile = document.getElementById("profile");
 
-    if (y.classList.contains("show")) {
+    if (profile.classList.contains("show")) {
         // Fade out the image and remove blur
-        y.style.opacity = '0';
+        profile.style.opacity = '0';
         setTimeout(function() {
-            y.classList.remove("show");
-            y.style.visibility = 'hidden';
+            profile.classList.remove("show");
+            profile.style.visibility = 'hidden';
         }, 500); // Matches the transition duration
     } else {
         // Fade in the image and add blur
-        y.style.visibility = 'visible';
-        y.classList.add("show");
-        y.style.opacity = '1';
+        profile.style.visibility = 'visible';
+        profile.classList.add("show");
+        profile.style.opacity = '1';
     }
 }
 
@@ -105,7 +104,6 @@ let countdownDuration = 15; // seconds
 let countdownElement = document.getElementById('countdown');
 
 function startCountdown() {
-    WordHighLight();
     let input = document.getElementById("userInput");
     let timeLeft = countdownDuration;
     let countdownElement = document.getElementById('countdown');
@@ -139,11 +137,6 @@ function TimeOption() {
     }
 }
 
-function WordHighLight() {
-    let word = document.getElementById("words");
-    word.style.textShadow = '1px 1px';
-}
-
 function score() {
     let input = document.getElementById("userInput");
     let score = document.getElementById("score");
@@ -172,15 +165,13 @@ function UpdateWordCount() {
     var paragraph = document.getElementById("WordCount"); 
     paragraph.textContent = "Words: " + WordCount;
     var paragraph2 = document.getElementById("WordCountStats");
-    paragraph2.style.color = "crimson";
-    paragraph2.style.hover = "crimson";
     paragraph2.textContent = "Total words: " + WordCount;
 }
 
 function updateWpmCount() {
     console.log(WpmCount.toFixed(0));
     var paragraph = document.getElementById("WpmCount"); 
-    paragraph.textContent = "wpm: " + WpmCount.toFixed(0);
+    paragraph.textContent = "WPM: " + WpmCount.toFixed(0);
     paragraph.style.color = "crimson";
 }
 
