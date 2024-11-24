@@ -42,22 +42,26 @@ a {
     opacity: 0; /* Initially invisible */
     visibility: hidden; /* Initially hidden */
     transition: opacity 0.5s ease-out; /* Transition for opacity */
+    margin-top: -10%;
 }
 
 #profile.show {
     opacity: 1; /* Fully visible */
     visibility: visible; /* Shows the element */
     transition: opacity 0.5s ease-out; /* Transition for opacity */
+    margin-top: 0%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: justify;
-    margin-left: 4.5%;
-    margin-right: 4.5%;
     padding: 75px;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.124);
-    font-size: 40px;
+    background-color: rgba(255, 255, 255, 0.325);
+    font-size: 30px;
+}
+
+.information {
+    margin-top: 10px;
 }
 
 .main_game {
@@ -179,7 +183,12 @@ a {
     border-radius: 10px;
 }
 
-
+@media (max-width: 1600px) {
+    #score {
+        font-size: 25px;
+        padding: 50px 100px;
+    }
+}
 
 #StatsLeft, #StatsRight {
     display: flex;
