@@ -10,21 +10,28 @@
 <body>
     <div class="main-content">
         <div class="navbar">
-            <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
+            <img class="logo" src="{{ url_for('static', filename='images/redtype_simple_design_logo0923.png') }}">
             <div class="menu">
                 <img src="{{ url_for('static', filename='images/home.png') }}" class="Menu_home" onclick="home()" alt="Menu option 1: go to home">
-                <img src="{{ url_for('static', filename='images/stats.png') }}" class="Menu_stats"  alt="Menu option 2: go to stats">
-                <img src="{{ url_for('static', filename='images/settings.png') }}" alt="Menu option 3: go to settings">
-                <img src="{{ url_for('static', filename='images/about.png') }}"  alt="Menu option 4: go to about me">
+                <img src="{{ url_for('static', filename='images/about.png') }}"  alt="Menu option 2: go to about me">
+                <img src="{{ url_for('static', filename='images/stats.png') }}" class="Menu_stats"  alt="Menu option 3: go to stats">
+                <img src="{{ url_for('static', filename='images/settings.png') }}" alt="Menu option 4: go to settings">
                 <img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()" alt="Menu option 5: log inn or sign up">
             </div>
         </div>
         <div id="profile">
-            <p>Welcome to Redtype!</p>
-            <p>Please enter your name:</p>
-            <input type="text" id="username" placeholder="Enter your name">
-            <input type="text" id="username" placeholder="Enter your username">
-            <input type="text" id="username" placeholder="Enter your mail">
+            <img class="logo" src="{{ url_for('static', filename='images/redtype_simple_design_logo0923.png') }}">
+            <p>Sign or log in to experience 100%</p>
+            <div class="information">
+                <p>Username</p>
+                <input type="text" id="username" placeholder="Don't use your real name">
+                <p>Password</p>
+                <input type="password" id="password" placeholder="Atleast 8 letters">
+                <p>Verify Password</p>
+                <input type="password" id="Verify_password" placeholder="Repeat above">
+                <p>Email</p>
+                <input type="email" id="Email" placeholder="Example@gmail.com">
+            </div>
         </div>
         <div class="main_game" id="game"> 
             <p id="words">{{ words }}</p>
