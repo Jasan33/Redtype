@@ -1,7 +1,7 @@
 <h1 align="center"> Welcome to Redtype! </h1>
 The offcial Redtype github where all the magic happend
 
-In this website, you can test your typing speed, compete with others, rise your globally ranking, level up to be the greates and last but, not least imporove your typing.
+In this game, you can test your typing speed, compete with others, rise your globally ranking, level up to be the greates and last but, not least imporove your typing.
 
 ### How the game works:
 This game uses wpm to determain speed, wpm stands simply for "words per minute" and is used to descripe
