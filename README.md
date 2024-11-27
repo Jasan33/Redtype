@@ -1,5 +1,5 @@
 <h1 align="center"> Welcome to Redtype! </h1>
-The offcial Redtype github where all the magic happend
+The offcial Redtype github where all the magic happens
 
 In this game, you can test your typing speed, compete with others, rise your globally ranking, level up to be the greates and last but, not least imporove your typing.
 
