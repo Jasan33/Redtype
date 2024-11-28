@@ -12,6 +12,7 @@ body {
 .blur-background {
     filter: blur(10px); /* Adjust the blur intensity as needed */
     transition: filter 0.5s ease-out; /* Smooth transition for blur */
+    background-color: rgba(255, 255, 255, 0);
 }
 
 a {
@@ -274,4 +275,33 @@ a {
 #RejectCookies:hover {
     background-color: rgba(34, 248, 1, 0.286);
     cursor: pointer;
+}
+
+#temporary {
+    display: block;
+    position: relative;
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.5s ease-out; /* Transition for opacity */
+}
+
+#temporary.show {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Shows the element */
+    transition: opacity 2.5s ease-out; /* Transition for opacity */
+    bottom: 1px;
+    display: flex;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px 100px;
+    padding: 100px; 
+    z-index: 98; /* Higher than any other elements */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: rgba(148, 147, 147, 0.835);
 }
