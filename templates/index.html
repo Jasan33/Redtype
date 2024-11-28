@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="x-icon" href="{{ url_for('static', filename='images/Redtype_mini_logo.png') }}">
@@ -7,16 +8,20 @@
     <title>Redtype</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <div class="main-content">
         <div class="navbar">
             <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
             <div class="menu">
-                <img src="{{ url_for('static', filename='images/home.png') }}" class="Menu_home" onclick="home()" alt="Menu option 1: go to home">
-                <img src="{{ url_for('static', filename='images/about.png') }}"  alt="Menu option 2: go to about me">
-                <img src="{{ url_for('static', filename='images/stats.png') }}" class="Menu_stats"  alt="Menu option 3: go to stats">
+                <img src="{{ url_for('static', filename='images/home.png') }}" class="Menu_home" onclick="home()"
+                    alt="Menu option 1: go to home">
+                <img src="{{ url_for('static', filename='images/about.png') }}" alt="Menu option 2: go to about me">
+                <img src="{{ url_for('static', filename='images/stats.png') }}" class="Menu_stats"
+                    alt="Menu option 3: go to stats">
                 <img src="{{ url_for('static', filename='images/settings.png') }}" alt="Menu option 4: go to settings">
-                <img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()" alt="Menu option 5: log inn or sign up">
+                <img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()"
+                    alt="Menu option 5: log inn or sign up">
             </div>
         </div>
         <div id="profile">
@@ -33,12 +38,16 @@
                 <input type="email" id="Email" placeholder="Example@gmail.com">
             </div>
         </div>
-        <div class="main_game" id="game"> 
-            <p id="words">{{ words }}</p>
+        <div class="main_game" id="game">
+            <div id="words">
+                {% for i in range(0, words|length) %}
+                    <span class="word">{{ words[i] }}</span>
+                {% endfor %}
+            </div>            
         </div>
         <div class="timer">
             <div id="countdown">
-                 <p></p>
+                <p></p>
             </div>
             <input id="TimeChanger" type="text" placeholder="15">
             <div><button onclick="TimeOption()" id="ButtonAddTime" alt="change time">Custom time?</button></div>
@@ -47,14 +56,14 @@
         <div class="stats">
             <div class="WordCount">
                 <div id="WordCount">
-                     <p></p>
+                    <p></p>
                 </div>
             </div>
-            <div class="CharactersCount"> 
+            <div class="CharactersCount">
                 <div id="CharactersCount">
-                     <p></p>
+                    <p></p>
                 </div>
-            </div>        
+            </div>
         </div>
     </div>
     <div id="score">
@@ -98,4 +107,5 @@
     </div>
     <script src="{{url_for('static', filename='script.js')}}"></script>
 </body>
+
 </html>
