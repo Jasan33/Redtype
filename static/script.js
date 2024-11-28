@@ -163,8 +163,6 @@ function score() {
 
 function UpdateWordCount() {
     console.log("word count updated");
-    var paragraph = document.getElementById("WordCount"); 
-    paragraph.textContent = "Words: " + WordCount;
     var paragraph2 = document.getElementById("WordCountStats");
     paragraph2.textContent = "Total words: " + WordCount;
 }
@@ -178,8 +176,6 @@ function updateWpmCount() {
 
 function UpdateCharactersCount() {
     console.log("character count updated");
-    var paragraph = document.getElementById("CharactersCount"); 
-    paragraph.textContent = "Characters: " + CharactersCount;
     var paragraph2 = document.getElementById("CharactersCountStats");
     paragraph2.style.color = "crimson";
     paragraph2.textContent = "Total Characters: " + CharactersCount;
