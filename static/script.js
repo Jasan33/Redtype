@@ -11,6 +11,7 @@ window.onload = () => {
     const userInput = document.getElementById('userInput');
     userInput.onpaste = e => e.preventDefault();
     CheckCookies();
+    temporary();
    }
 
 
@@ -216,5 +217,32 @@ function cookies() {
         cookies.classList.add("show");
         cookies.style.opacity = '1';
         mainContent.classList.add("blur-background");
+    }
+}
+
+function temporary() {
+    let temp = document.getElementById("temporary");
+    let mainContent = document.querySelector('.main-content'); // Select the content to blur
+    let body = document.querySelector('body');
+
+    if (temp.classList.contains("show")) {
+        // Fade out the image and remove blur
+        temp.style.opacity = '0';
+        setTimeout(function() {
+            temp.classList.remove("show");
+            temp.style.visibility = 'hidden';
+            mainContent.classList.remove("blur-background");
+            CookieOption.style.gap = '0%';
+        }, 500); // Matches the transition duration
+    } else {
+        // Fade in the image and add blur
+        temp.style.visibility = 'visible';
+        temp.classList.add("show");
+        temp.style.opacity = '1';
+        mainContent.classList.add("blur-background");
+        mainContent.style.filter = "blur(100px)";
+        mainContent.style.backgroundColor = "rgba(0, 0, 0, 100)";
+        mainContent.style.transition = "filter, background-color 7.5s ease-in";
+        body.style.overflow = "hidden";
     }
 }
