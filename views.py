@@ -7,7 +7,7 @@ views = Blueprint(__name__, "views")
 @views.route("/")
 def home():
     words = select_words()  # Generate a list of words
-    return render_template('index.html', words=" ".join(words))  # Pass as a single string
+    return render_template('index.html', words=words)  # Pass as a single string
 
 def select_words():
     # Select 45 words from category 'a'
@@ -18,7 +18,7 @@ def select_words():
 # Word categories
 word_categories = {
     'a': [
-        "the", "develop", "of", "and", "a", "to", "in", "he", "have", "it", "that", "for", "they", "I", "with", "as", "not", "on", "she",
+        "the", "develop", "of", "and", "a", "to", "in", "he", "have", "it", "that", "for", "they", "much", "with", "as", "not", "on", "she",
         "at", "by", "this", "we", "you", "do", "but", "from", "or", "which", "one", "would", "all", "will", "there", "say", "who",
         "make", "when", "can", "more", "if", "no", "man", "out", "other", "so", "what", "time", "up", "go", "about", "than", "into",
         "could", "state", "only", "new", "year", "some", "take", "come", "these", "know", "see", "use", "get", "like", "then", "first",
