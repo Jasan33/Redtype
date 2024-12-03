@@ -11,7 +11,6 @@ window.onload = () => {
     const userInput = document.getElementById('userInput');
     userInput.onpaste = e => e.preventDefault();
     CheckCookies();
-    temporary();
    }
 
 
@@ -33,51 +32,36 @@ function profile() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    let words = document.getElementById("words").textContent.split(" ");
-    let userInput = document.getElementById("userInput");
+document.addEventListener('DOMContentLoaded', () => {
+    const words = Array.from(document.querySelectorAll('.word')); // All words displayed
+    const userInput = document.getElementById('userInput'); // Input field
 
-    userInput.addEventListener("input", (e) => {
-        let typed = userInput.value.trim(); // Retrieve the trimmed value from the input
-        let currentWord = words[0];  // Get the first word in the table
-        let currentLength = words[0].length;
-        let removedWord = document.getElementById("words");
-        let start = e.inputType === "insertText"
-        let color = document.getElementById("userInput");
-        let game = document.getElementById("userInput");
+    let currentIndex = 0; // Tracks the current word index
 
-        // Check if the user pressed space (keyCode 32) and the typed word matches the current word
-        // e.inputType === "insertText" checks if input was modified
-        // e.data === " " checks is user pressed space
-        // typed === currentWord ensures that the typed word matches the current word
-        if (e.inputType === "insertText" && e.data === " " && typed === currentWord) {
-            // Remove the word from the list and update the display
-            words.shift();  // Remove the first word from the table
-            userInput.value = "";  // Clear the input
-            removedWord.textContent = words.join(" ");  // Updates displayed words
-            console.log("+1 point");
-            GameColor();
-            WordCount += 1; 
-            UpdateWordCount();
-            CharactersCount += typed.length;
-            UpdateCharactersCount();
-            WpmCount += typed.length/5 * 4;
-            updateWpmCount();
+    // Highlight the first word as active
+    words[currentIndex].classList.add('active');
+
+    // Event listener for typing
+    userInput.addEventListener('input', () => {
+        const typedValue = userInput.value.trim(); // Remove leading/trailing spaces
+        const currentWord = words[currentIndex].textContent;
+
+        if (typedValue === currentWord) {
+            // Word typed correctly
+            words[currentIndex].classList.remove('active');
+            words[currentIndex].classList.add('correct');
+            currentIndex++; // Move to the next word
+            userInput.value = ''; // Clear input field
+
+            if (currentIndex < words.length) {
+                words[currentIndex].classList.add('active'); // Highlight the next word
+            }
+        } else if (!currentWord.startsWith(typedValue)) {
+            // Word typed incorrectly
+            words[currentIndex].classList.add('incorrect');
         } else {
-            game.style.backgroundColor = "rgba(0, 0, 0, 0.124";
-        }
-        if (e.data === " ") {
-            userInput.value = "";
-        }
-        if (e.inputType === "insertText" && e.data === " " && typed.length < currentLength) {
-            userInput.value = ""; 
-            color.style.color = "red";
-            game.style.backgroundColor = "rgba(229, 12, 12, 0.075)";
-        } else {
-            color.style.color = "white";
-        }
-        if (e.inputType === "insertText") {
-            UserReady();
+            // Remove incorrect class if part of the word matches
+            words[currentIndex].classList.remove('incorrect');
         }
     });
 });
@@ -87,14 +71,6 @@ function UserReady() {
         startCountdown();
         localStorage.removeItem('UserIsReady');
     } 
-}
-
-function GameColor() {
-    let game = document.getElementById("userInput");
-
-    game.style.backgroundColor = "rgba(45, 229, 12, 0.075)";
-    game.style.transform = "opacity 0.001s ease-in-out";
-    game.style.transition = "background-color 0.001s ease-in-out";
 }
 
 function timeuse() {
