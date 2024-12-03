@@ -29,22 +29,21 @@
             <p>Sign or log in to experience 100%</p>
             <div class="information">
                 <p>Username</p>
-                <input type="text" id="username" placeholder="Don't use your real name">
+                <input type="text" id="username" placeholder="Don't use your real name" required>
                 <p>Password</p>
-                <input type="password" id="password" placeholder="Atleast 8 letters">
+                <input type="password" id="password" placeholder="Atleast 8 letters" required>
                 <p>Verify Password</p>
-                <input type="password" id="Verify_password" placeholder="Repeat above">
+                <input type="password" id="Verify_password" placeholder="Repeat above" required>
                 <p>Email</p>
-                <input type="email" id="Email" placeholder="Example@gmail.com">
+                <input type="email" id="Email" placeholder="Example@gmail.com" required>
             </div>
         </div>
-        <div class="main_game" id="game">
-            <div id="words">
-                {% for i in range(0, words|length) %}
-                    <span class="word">{{ words[i] }}</span>
-                {% endfor %}
-            </div>            
+        <div id="words">
+            {% for word in words %}
+            <span class="word">{{ word }}</span>
+            {% endfor %}
         </div>
+        <input autofocus type="text" id="userInput" placeholder="Type here...">
         <div class="timer">
             <div id="countdown">
                 <p></p>
@@ -52,7 +51,6 @@
             <input id="TimeChanger" type="text" placeholder="15">
             <div><button onclick="TimeOption()" id="ButtonAddTime" alt="change time">Custom time?</button></div>
         </div>
-        <input autofocus type="text" id="userInput" class="input">
         <div class="stats">
             <div class="WordCount">
                 <div id="WordCount">
