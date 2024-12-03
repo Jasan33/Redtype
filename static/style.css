@@ -72,10 +72,35 @@ a {
     text-align: justify;
     margin-left: 4.5%;
     margin-right: 4.5%;
-    padding: 75px;
+    padding: 60px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.124);
     font-size: 40px;
+}
+
+.word {
+    display: inline-block;
+    margin: 0;
+    white-space: nowrap;
+    margin-left: 1.5%;
+    transition: color 0.3s ease;
+}
+
+.active {
+    background-color: lightblue;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.letter {
+    display: inline;
+    margin: -5px;
 }
 
 .input {
