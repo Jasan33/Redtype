@@ -1,18 +1,17 @@
 from flask import Blueprint, render_template
 import random
-import time
 
 views = Blueprint(__name__, "views")
 
 @views.route("/")
 def home():
-    words = select_words()  # Generate a list of words
-    return render_template('index.html', words=words)  # Pass as a single string
+    words = select_words()  # Generates a list of words
+    return render_template('index.html', words=words)
 
 def select_words():
     # Select 45 words from category 'a'
     words = random.sample(word_categories['a'], 45)
-    random.shuffle(words)  # Shuffle words for variety
+    random.shuffle(words)  # Randome and Shuffled words are selected
     return words
 
 # Word categories
@@ -36,11 +35,3 @@ word_categories = {
 @views.route("/typing")
 def typing():
     return render_template('typing.html')
-
-@views.route("/timer")
-def timer():
-    countdown = 30
-    while countdown >= 0:
-        time.sleep(1)
-        countdown -= 1
-    return "Time is up!"
