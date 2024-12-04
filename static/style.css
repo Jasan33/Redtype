@@ -65,6 +65,15 @@ a {
     margin-top: 10px;
 }
 
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    cursor: pointer;
+}
+
 .main_game {
     display: flex;
     justify-content: space-between;
