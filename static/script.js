@@ -33,38 +33,62 @@ function profile() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const words = Array.from(document.querySelectorAll('.word')); // All words displayed
+    const words = Array.from(document.querySelectorAll('.word')); // selects all words that are displayed
     const userInput = document.getElementById('userInput'); // Input field
 
-    let currentIndex = 0; // Tracks the current word index
+    let currentIndex = 0; // Tracks the current word
 
-    // Highlight the first word as active
+    // Set the first word as active
     words[currentIndex].classList.add('active');
 
-    // Event listener for typing
-    userInput.addEventListener('input', () => {
-        const typedValue = userInput.value.trim(); // Remove leading/trailing spaces
-        const currentWord = words[currentIndex].textContent;
+    userInput.addEventListener('keydown', (event) => {
+        if (event.key === ' ') {
+            event.preventDefault(); // Prevent adding a space to the input field
+            const typedValue = userInput.value.trim(); // Remove leading/trailing spaces
+            const currentWord = words[currentIndex].textContent;
 
-        if (typedValue === currentWord) {
-            // Word typed correctly
-            words[currentIndex].classList.remove('active');
-            words[currentIndex].classList.add('correct');
-            currentIndex++; // Move to the next word
+            if (typedValue === currentWord) {
+                // Word typed correctly
+                words[currentIndex].classList.remove('active');
+                words[currentIndex].classList.add('correct');
+                UserReady();
+                WordCount += 1;
+                UpdateWordCount();
+                CharactersCount += typedValue.length;
+                UpdateCharactersCount();
+                WpmCount += typedValue.length/5 * 4;
+                updateWpmCount();
+                currentIndex++; // Move to the next word
+            } else {
+                // Word typed incorrectly
+                words[currentIndex].classList.remove('active');
+                words[currentIndex].classList.add('incorrect');
+                currentIndex++;
+            }
+
             userInput.value = ''; // Clear input field
 
             if (currentIndex < words.length) {
                 words[currentIndex].classList.add('active'); // Highlight the next word
             }
-        } else if (!currentWord.startsWith(typedValue)) {
-            // Word typed incorrectly
-            words[currentIndex].classList.add('incorrect');
-        } else {
+        }
+    });
+
+    userInput.addEventListener('input', () => {
+        const typedValue = userInput.value.trim(); // Remove leading/trailing spaces
+        const currentWord = words[currentIndex].textContent;
+
+        if (currentWord.startsWith(typedValue)) {
             // Remove incorrect class if part of the word matches
             words[currentIndex].classList.remove('incorrect');
+            words[currentIndex].classList.add('correct');
+        } else {
+            // Word typed incorrectly
+            words[currentIndex].classList.add('incorrect');
         }
     });
 });
+
 
 function UserReady() {
     if (value = localStorage.getItem('UserIsReady')) {
