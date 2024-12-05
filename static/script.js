@@ -53,8 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 words[currentIndex].classList.add('correct');
                 UserReady();
                 WordCount += 1;
+                update_total_words();
                 UpdateWordCount();
                 CharactersCount += typedValue.length;
+                update_total_Characters();
                 UpdateCharactersCount();
                 WpmCount += typedValue.length/5 * 4;
                 updateWpmCount();
@@ -167,6 +169,17 @@ function UpdateWordCount() {
     paragraph2.textContent = "Total words: " + WordCount;
 }
 
+async function update_total_words() {
+    try {
+        const response = await fetch("/update_total_words", { method: "POST" });
+        if (!response.ok) {
+            console.error("Failed to update words on the server.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
 function updateWpmCount() {
     console.log(WpmCount.toFixed(0));
     var paragraph = document.getElementById("WpmCount"); 
@@ -179,6 +192,23 @@ function UpdateCharactersCount() {
     var paragraph2 = document.getElementById("CharactersCountStats");
     paragraph2.style.color = "crimson";
     paragraph2.textContent = "Total Characters: " + CharactersCount;
+}
+
+async function update_total_Characters() {
+    try {
+        const response = await fetch("/update_total_Characters", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ characters: CharactersCount }), // Send the character count
+        });
+        if (!response.ok) {
+            console.error("Failed to update characters on the server.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }
 
 function CheckCookies() {
