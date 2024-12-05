@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redtype leaderboards</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="flashes">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+<h1 class="leaderboard">Leaderboard</h1>
+<p>Welcome, {{ username }}!</p>
+<ul>
+    <p>User Words Characters</p>
+    {% for user in people %}
+    <li>{{ user[0] }} - {{ user[2] }} - {{ user[1] }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('home') }}">back to gamin?</a>
+</body>
+</html>
