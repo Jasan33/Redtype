@@ -4,26 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redtype leaderboards</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul class="flashes">
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endwith %}
-
-<h1 class="leaderboard">Leaderboard</h1>
-<p>Welcome, {{ username }}!</p>
-<ul>
-    <p>User Words Characters</p>
-    {% for user in people %}
-    <li>{{ user[0] }} - {{ user[2] }} - {{ user[1] }}</li>
-    {% endfor %}
-</ul>
-<a href="{{ url_for('home') }}">back to gamin?</a>
+    <div class="main-content">
+        <div class="navbar">
+            <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
+            <div class="menu">
+                <img src="{{ url_for('static', filename='images/home.png') }}" class="Menu_home" onclick="home()"
+                    alt="Menu option 1: go to home">
+                <img src="{{ url_for('static', filename='images/about.png') }}" alt="Menu option 2: go to about me">
+                <img src="{{ url_for('static', filename='images/stats.png') }}" class="Menu_stats"
+                    alt="Menu option 3: go to stats">
+                <img src="{{ url_for('static', filename='images/settings.png') }}" alt="Menu option 4: go to settings">
+                <div class="user"><img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()"
+                    alt="Menu option 5: log inn or sign up">
+                    <p id="usernames">
+                        {% if username %}
+                            Welcome, {{ username }}!
+                        {% else %}
+                            Welcome, Guest!
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="leaderboard_h1">Leaderboard Ranking</h1>
+    <!--
+    <form id="search_form">
+    <input type="text" id="search_input" placeholder="Search by username...">
+    <button type="submit">Search</button>
+    </form>
+    -->
+    <div>
+        <div class="leaderboard_titels">
+            <p>username</p>
+            <p>Total Words</p>
+            <p>Total characters</p>
+        </div>
+        {% for user in people %}
+        <hr>
+        <div class="leaderboard">
+            <p>{{ loop.index }}. {{ user[0] }}</p>
+            <p>{{ user[2] }}</p>
+            <p>{{ user[1] }}</p>
+        </div>
+        {% endfor %}
+        <hr>
+    </div>
+    <a href="{{ url_for('home') }}">back to gamin?</a>
 </body>
+<script src="{{url_for('static', filename='script.js')}}"></script>
 </html>
