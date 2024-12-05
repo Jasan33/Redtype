@@ -22,7 +22,13 @@
                 <img src="{{ url_for('static', filename='images/settings.png') }}" alt="Menu option 4: go to settings">
                 <div class="user"><img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()"
                     alt="Menu option 5: log inn or sign up">
-                    <p id="usernames">Welcome, {{ username }}!</p>
+                    <p id="usernames">
+                        {% if username %}
+                            Welcome, {{ username }}!
+                        {% else %}
+                            Welcome, Guest!
+                        {% endif %}
+                    </p>
                 </div>
             </div>
         </div>
@@ -32,6 +38,8 @@
             <div class="information">
                 <a href="{{ url_for('register') }}">Click to register</a>
                 <a href="{{ url_for('login') }}"> Click to log in</a>
+                <a href="{{ url_for('leaderboard') }}"> Click see leaderboards</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
             </div>
         </div>
         <div class="main_game" id="game">
