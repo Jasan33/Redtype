@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS user (
     total_words INT DEFAULT 0,
     level INT DEFAULT 0,
     characters INT DEFAULT 0,
-    password VARCHAR(255)
+    password VARBINARY(255)
 );
