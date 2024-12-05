@@ -62,6 +62,7 @@ a {
 }
 
 .information {
+    gap: 100px;
     margin-top: 10px;
 }
 
