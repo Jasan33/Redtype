@@ -22,11 +22,23 @@ AES_KEY = os.getenv("AES_KEY")
 
 @app.route("/")
 def home():
-    username = session['username']
-    cur = mysql.connection.cursor()
-    cur.close()
+    username = session.get('username', None)  # Get username if logged in, otherwise None
     words = select_words()  # Generates a list of words
     return render_template('index.html', words=words, username=username)
+
+
+@app.route("/leaderboard")
+def leaderboard():
+    if 'username' not in session:
+        flash("Please log in to access this page.")
+        return redirect(url_for('login'))
+    
+    username = session['username']
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT username, characters, total_words FROM user ORDER BY total_words DESC")
+    people = cur.fetchall()
+    cur.close()
+    return render_template('leaderboard.html', people=people, username=username)
 
 def select_words():
     # Select 45 words from category 'a'
@@ -52,6 +64,49 @@ word_categories = {
         "eye", "plan", "run", "keep", "face", "fact", "group", "play", "stand", "increase", "early", "course", "change", "help", "line"
     ]
 }
+
+@app.route("/update_total_words", methods=["POST"])
+def update_total_words():
+    if 'user_id' not in session:
+        return {"error": "User not logged in"}, 401
+
+    user_id = session['user_id']
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        UPDATE user 
+        SET total_words = total_words + 1 
+        WHERE id = %s
+    """, (user_id,))
+    mysql.connection.commit()
+    cur.close()
+    return {"success": True}
+
+@app.route("/update_total_Characters", methods=["POST"])
+def update_total_Characters():
+    if 'user_id' not in session:
+        return {"error": "User not logged in"}, 401
+
+    data = request.get_json()
+    if not data or 'characters' not in data:
+        return {"error": "Invalid request data"}, 400
+
+    user_id = session['user_id']
+    characters = data['characters']
+
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            UPDATE user
+            SET characters = characters + %s
+            WHERE id = %s
+        """, (characters, user_id))
+        mysql.connection.commit()
+        cur.close()
+        return {"success": True}
+    except Exception as e:
+        print(f"Error updating characters: {e}")
+        return {"error": "Failed to update characters"}, 500
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -101,11 +156,17 @@ def login():
             session['user_id'] = user[0]
             session['username'] = user[1]  # Store username in session
             flash("Login successful!")
-            return redirect(url_for('hello'))
+            return redirect(url_for('home'))
         else:
             flash("Invalid credentials. Please try again.")
     
     return render_template('login.html')
+
+@app.route("/logout")
+def logout():
+    session.clear()  # Clear all session data
+    flash("You have been logged out.")
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)
