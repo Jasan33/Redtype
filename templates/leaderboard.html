@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{{ url_for('static', filename='images/Redtype_mini_logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redtype leaderboards</title>
+    <title>Leaderboard - Redtype</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -54,6 +55,6 @@
         <hr>
     </div>
     <a href="{{ url_for('home') }}">back to gamin?</a>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
 </body>
-<script src="{{url_for('static', filename='script.js')}}"></script>
 </html>
