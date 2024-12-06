@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Redtype/Login_Page</title>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="x-icon" href="{{ url_for('static', filename='images/Redtype_mini_logo.png') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Redtype</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     {% with messages = get_flashed_messages(with_categories=True) %}
@@ -25,5 +28,6 @@
         <button type="submit">Login</button>
     </form>
     <a href="{{ url_for('register') }}">Don't have an account!?</a>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 </html>
