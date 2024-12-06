@@ -13,9 +13,39 @@ window.onload = () => {
     CheckCookies();
    }
 
+function home(url) {
+    window.location.href = url; // Opens the link in the same tab
+}
+
+function about(url) {
+    window.location.href = url; // Opens the link in the same tab
+}
+
+function leaderboard_url(url) {
+    window.location.href = url; // Opens the link in the same tab
+}
+
 
 function profile() {
     let profile = document.getElementById("profile");
+
+    if (profile.classList.contains("show")) {
+        // Fade out the image and remove blur
+        profile.style.opacity = '0';
+        setTimeout(function() {
+            profile.classList.remove("show");
+            profile.style.visibility = 'hidden';
+        }, 500); // Matches the transition duration
+    } else {
+        // Fade in the image and add blur
+        profile.style.visibility = 'visible';
+        profile.classList.add("show");
+        profile.style.opacity = '1';
+    }
+}
+
+function settings() {
+    let profile = document.getElementById("settings");
 
     if (profile.classList.contains("show")) {
         // Fade out the image and remove blur
