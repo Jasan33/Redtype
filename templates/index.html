@@ -12,16 +12,13 @@
 <body>
     <div class="main-content">
         <div class="navbar">
-            <img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}">
+            <a href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}"></a>
             <div class="menu">
-                <img src="{{ url_for('static', filename='images/home.png') }}" class="Menu_home" onclick="home()"
-                    alt="Menu option 1: go to home">
-                <img src="{{ url_for('static', filename='images/about.png') }}" alt="Menu option 2: go to about me">
-                <img src="{{ url_for('static', filename='images/stats.png') }}" class="Menu_stats"
-                    alt="Menu option 3: go to stats">
-                <img src="{{ url_for('static', filename='images/settings.png') }}" alt="Menu option 4: go to settings">
-                <div class="user"><img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()"
-                    alt="Menu option 5: log inn or sign up">
+                <img src="{{ url_for('static', filename='images/home.png') }}" class="Menu_home" onclick="home('/')" alt="Menu option 1: go to home">
+                <img src="{{ url_for('static', filename='images/about.png') }}" onclick="about('/about')" alt="Menu option 2: go to about me">
+                <img src="{{ url_for('static', filename='images/stats.png') }}" onclick="leaderboard_url('/leaderboard')" class="Menu_stats" alt="Menu option 3: go to stats">
+                <img src="{{ url_for('static', filename='images/settings.png') }}" onclick="settings()" alt="Menu option 4: go to settings">
+                <div class="user"><img src="{{ url_for('static', filename='images/log_in.png') }}" onclick="profile()" alt="Menu option 5: log inn or sign up">
                     <p id="usernames">
                         {% if username %}
                             Welcome, {{ username }}!
@@ -32,14 +29,31 @@
                 </div>
             </div>
         </div>
+        <div id="settings">
+            <img class="logo" src="{{ url_for('static', filename='images/redtype_simple_design_logo0923.png') }}">
+            <p>settings coming soon</p>
+        </div>
         <div id="profile">
             <img class="logo" src="{{ url_for('static', filename='images/redtype_simple_design_logo0923.png') }}">
-            <p>Sign or log in to experience 100%</p>
             <div class="information">
-                <a href="{{ url_for('register') }}">Click to register</a>
-                <a href="{{ url_for('login') }}"> Click to log in</a>
-                <a href="{{ url_for('leaderboard') }}"> Click see leaderboards</a>
-                <a href="{{ url_for('logout') }}">Logout</a>
+                <p id="usernames">
+                    {% if username %}
+                    <div class="profile_structure">
+                        <p>hi, {{ username }}!</p>
+                        <div class="profile_picture">
+                            <img src="{{ url_for('static', filename='images/log_in.png') }}">
+                            <p>change profile picture</p>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('logout') }}"> Click to Logout</a>
+                    {% else %}
+                        hi, Guest!
+                        <div class="profile_guest">
+                            <a href="{{ url_for('login') }}">(click to login)</a>
+                            <a href="{{ url_for('register') }}">(Click to register)</a>
+                        </div>
+                    {% endif %}
+                </p>
             </div>
         </div>
         <div class="main_game" id="game">
@@ -113,5 +127,4 @@
     </div>
     <script src="{{url_for('static', filename='script.js')}}"></script>
 </body>
-
 </html>
