@@ -12,7 +12,7 @@
 <body>
     <div class="main-content">
         <div class="navbar">
-            <a href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static', filename='images/redtype_logo.png') }}"></a>
+            <a href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static', filename='images/redtype_logo_3.png') }}"></a>
             <div class="menu">
                 <img src="{{ url_for('static', filename='images/home.png') }}" class="Menu_home" onclick="home('/')" alt="Menu option 1: go to home">
                 <img src="{{ url_for('static', filename='images/about.png') }}" onclick="about('/about')" alt="Menu option 2: go to about me">
@@ -29,6 +29,7 @@
                 </div>
             </div>
         </div>
+        <div class="circle"></div>
         <div id="settings">
             <img class="logo" src="{{ url_for('static', filename='images/redtype_simple_design_logo0923.png') }}">
             <p>settings coming soon</p>
@@ -47,7 +48,7 @@
                     </div>
                     <a href="{{ url_for('logout') }}"> Click to Logout</a>
                     {% else %}
-                        hi, Guest!
+                        hi, Guest! login to view this page
                         <div class="profile_guest">
                             <a href="{{ url_for('login') }}">(click to login)</a>
                             <a href="{{ url_for('register') }}">(Click to register)</a>
