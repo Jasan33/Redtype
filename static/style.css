@@ -27,6 +27,15 @@ a {
     padding: 50px 5%;
     height: 64px;
     margin-bottom: 10px;
+    background-color: #EF233C;
+}
+
+.circle {
+    width: 100px;
+    margin-bottom: 100px;
+    background-color: #EF233C;
+    border-radius: 50%;
+    padding: 70px 20px;
 }
 
 .menu {
@@ -124,7 +133,7 @@ a {
     margin-right: 4.5%;
     padding: 60px;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.124);
+    background-color: #2B2D42;
     font-size: 40px;
 }
 
