@@ -24,7 +24,8 @@ AES_KEY = os.getenv("AES_KEY")
 def home():
     username = session.get('username', None)  # Get username if logged in, otherwise None
     words = select_words()  # Generates a list of words
-    return render_template('index.html', words=words, username=username)
+    words2 = select_words2()  # Generates a list of words
+    return render_template('index.html', words=words, words2=words2, username=username)
 
 
 @app.route("/leaderboard")
@@ -39,6 +40,14 @@ def leaderboard():
     people = cur.fetchall()
     cur.close()
     return render_template('leaderboard.html', people=people, username=username)
+
+
+def select_words2():
+    # Select 45 words from category 'a'
+    words = random.sample(word_categories['a'], 10)
+    random.shuffle(words)  # Randome and Shuffled words are selected
+    return words
+
 
 def select_words():
     # Select 45 words from category 'a'
