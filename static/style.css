@@ -26,22 +26,114 @@ a {
     align-items: center;
     padding: 50px 5%;
     height: 64px;
-    margin-bottom: 10px;
+    margin-bottom: 200px;
     background-color: #EF233C;
 }
 
+@media (max-width: 700px) {
+    .navbar {
+        justify-content: center;
+        margin-bottom: 0px;
+    }
+}
+
 .circle {
-    width: 100px;
-    margin-bottom: 100px;
+    width: 10%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 10%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 70px 20px;
+    padding: 12% 8%;
+    z-index: -100;
+}
+
+.circle2 {
+    width: 10%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 30%;
+    background-color: #EF233C;
+    border-radius: 50%;
+    padding: 12% 8%;
+    z-index: -100;
+}
+
+.circle3 {
+    width: 10%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 50%;
+    background-color: #EF233C;
+    border-radius: 50%;
+    padding: 12% 8%;
+    z-index: -100;
+}
+
+
+.circle4 {
+    width: 10%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 70%;
+    background-color: #EF233C;
+    border-radius: 50%;
+    padding: 12% 8%;
+    z-index: -100;
+}
+
+.circle5 {
+    width: 10%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 90%;
+    background-color: #EF233C;
+    border-radius: 50%;
+    padding: 12% 8%;
+    z-index: -100;
+}
+
+@media (max-width: 1200px) {
+    .circle, .circle2, .circle3, .circle4, .circle5{
+        display: none;
+    }
 }
 
 .menu {
     display: flex;
     gap: 30px;
     height: 75%;
+}
+
+@media (max-width: 700px) {
+    .menu {
+        gap: 30px;
+        height: 7.5%;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        top: 90%;
+        left: 50%;
+        background-color: #EF233C;
+        padding: 8% 25%;
+        z-index: 101;
+    }
+}
+
+@media (max-width: 700px) {
+    #words {
+        display: none;
+    }
+}
+
+@media (min-width: 700px) {
+    #words2 {
+        display: none;
+    }
 }
 
 .menu img:hover {
@@ -133,8 +225,15 @@ a {
     margin-right: 4.5%;
     padding: 60px;
     border-radius: 10px;
-    background-color: #2B2D42;
+    background-color: #8D99AE;
+    color: aliceblue;
     font-size: 40px;
+}
+
+@media (max-width: 700px) {
+    .main_game {
+        margin-top: 100px;
+    }
 }
 
 .word {
@@ -146,7 +245,9 @@ a {
 }
 
 .active {
-    background-color: lightblue;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .correct {
@@ -176,6 +277,12 @@ a {
     color: rgb(0, 0, 0);
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.124);
+}
+
+@media (max-width: 700px) {
+    .input {
+        margin-bottom: 100px;
+    }
 }
 
 #userInput {
