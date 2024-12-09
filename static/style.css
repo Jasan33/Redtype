@@ -45,7 +45,7 @@ a {
     left: 10%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 12% 8%;
+    padding: 11% 7%;
     z-index: -100;
 }
 
@@ -57,7 +57,7 @@ a {
     left: 30%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 12% 8%;
+    padding: 11% 7%;
     z-index: -100;
 }
 
@@ -69,7 +69,7 @@ a {
     left: 50%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 12% 8%;
+    padding: 11% 7%;
     z-index: -100;
 }
 
@@ -82,7 +82,7 @@ a {
     left: 70%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 12% 8%;
+    padding: 11% 7%;
     z-index: -100;
 }
 
@@ -94,11 +94,11 @@ a {
     left: 90%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 12% 8%;
+    padding: 11% 7%;
     z-index: -100;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     .circle, .circle2, .circle3, .circle4, .circle5{
         display: none;
     }
@@ -163,16 +163,16 @@ a {
 }
 
 #profile {
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Initially hidden */
-    transition: opacity 0.5s ease-out; /* Transition for opacity */
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.5s ease-out; 
     margin-top: -10%;
 }
 
 #profile.show {
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Shows the element */
-    transition: opacity 0.5s ease-out; /* Transition for opacity */
+    opacity: 1; 
+    visibility: visible; 
+    transition: opacity 0.5s ease-out;
     margin-top: 0%;
     display: flex;
     flex-direction: column;
@@ -274,9 +274,9 @@ a {
     padding: 20px;
     border-radius: 10px;
     border-style: solid;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.124);
+    background-color: rgba(255, 255, 255, 0.124);
 }
 
 @media (max-width: 700px) {
@@ -347,9 +347,9 @@ a {
 }
 
 #score {
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Initially hidden */
-    transition: opacity, background-color 0.5s ease-out; /* Transition for opacity and background color */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity, background-color 0.5s ease-out;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -359,7 +359,7 @@ a {
     top: 50%;
     left: 50%;
     padding: 100px 200px;
-    z-index: 99; /* Higher than any other elements */
+    z-index: 99; /* Higher than other elements */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     background-color: rgba(255, 255, 255, 0.289);
@@ -385,23 +385,23 @@ a {
 }
 
 #score.show {
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Shows the element */
+    opacity: 1;
+    visibility: visible;
 }
 
 
 #cookies {
     display: block;
     position: relative;
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Initially hidden */
-    transition: opacity 0.5s ease-out; /* Transition for opacity */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out;
 }
 
 #cookies.show {
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Shows the element */
-    transition: opacity 0.5s ease-out; /* Transition for opacity */
+    opacity: 1; 
+    visibility: visible;
+    transition: opacity 0.5s ease-out;
     position: sticky;
     bottom: 1px;
     display: flex;
@@ -409,7 +409,7 @@ a {
     justify-content: center;
     align-items: center;
     padding: 40px; 
-    z-index: 99; /* Higher than any other elements */
+    z-index: 99;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     background-color: rgba(148, 147, 147, 0.835);
@@ -457,15 +457,15 @@ a {
 #temporary {
     display: block;
     position: relative;
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Initially hidden */
-    transition: opacity 0.5s ease-out; /* Transition for opacity */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out;
 }
 
 #temporary.show {
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Shows the element */
-    transition: opacity 2.5s ease-out; /* Transition for opacity */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 2.5s ease-out;
     bottom: 1px;
     display: flex;
     position: fixed;
@@ -477,7 +477,7 @@ a {
     align-items: center;
     border-radius: 50px 100px;
     padding: 100px; 
-    z-index: 98; /* Higher than any other elements */
+    z-index: 98;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     background-color: rgba(148, 147, 147, 0.835);
