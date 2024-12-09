@@ -1,7 +1,7 @@
 var WordCount = parseInt(localStorage.getItem("WordCount")) || 0;
 var CharactersCount = parseInt(localStorage.getItem("characters")) || 0;
 var WpmCount = parseInt(localStorage.getItem("WpmCount")) || 0;
-window.onload = () => {
+window.onload = () => { // loads on reload
     let countdownElement = document.getElementById('countdown');
     UpdateWordCount();
     updateWpmCount();
@@ -13,24 +13,24 @@ window.onload = () => {
     CheckCookies();
    }
 
-function home(url) {
-    window.location.href = url; // Opens the link in the same tab
+function home(url) {  // url to home page
+    window.location.href = url; 
 }
 
 function about(url) {
-    window.location.href = url; // Opens the link in the same tab
+    window.location.href = url; 
 }
 
 function leaderboard_url(url) {
-    window.location.href = url; // Opens the link in the same tab
+    window.location.href = url; 
 }
 
 
-function profile() {
+function profile() { //open profile
     let profile = document.getElementById("profile");
 
     if (profile.classList.contains("show")) {
-        // Fade out the image and remove blur
+        // Fades out the image and removes blur
         profile.style.opacity = '0';
         setTimeout(function() {
             profile.classList.remove("show");
@@ -48,14 +48,12 @@ function settings() {
     let profile = document.getElementById("settings");
 
     if (profile.classList.contains("show")) {
-        // Fade out the image and remove blur
         profile.style.opacity = '0';
         setTimeout(function() {
             profile.classList.remove("show");
             profile.style.visibility = 'hidden';
-        }, 500); // Matches the transition duration
+        }, 500);
     } else {
-        // Fade in the image and add blur
         profile.style.visibility = 'visible';
         profile.classList.add("show");
         profile.style.opacity = '1';
@@ -78,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentWord = words[currentIndex].textContent;
 
             if (typedValue === currentWord) {
-                // Word typed correctly
+                // If Word typed correctly
                 words[currentIndex].classList.remove('active');
                 words[currentIndex].classList.add('correct');
                 UserReady();
@@ -90,9 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 UpdateCharactersCount();
                 WpmCount += typedValue.length/5 * 4;
                 updateWpmCount();
-                currentIndex++; // Move to the next word
+                currentIndex++; // Moves to the next word
             } else {
-                // Word typed incorrectly
+                // If Word typed incorrectly
                 words[currentIndex].classList.remove('active');
                 words[currentIndex].classList.add('incorrect');
                 currentIndex++;
@@ -122,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function UserReady() {
+function UserReady() { //starts timer once user is ready
     if (value = localStorage.getItem('UserIsReady')) {
         startCountdown();
         localStorage.removeItem('UserIsReady');
@@ -173,18 +171,16 @@ function TimeOption() {
 function score() {
     let input = document.getElementById("userInput");
     let score = document.getElementById("score");
-    let mainContent = document.querySelector('.main-content'); // Select the content to blur
+    let mainContent = document.querySelector('.main-content');
 
     if (score.classList.contains("show")) {
-        // Fade out the image and remove blur
         score.style.opacity = '0';
         setTimeout(function() {
             score.classList.remove("show");
             score.style.visibility = 'hidden';
             mainContent.classList.remove("blur-background");
-        }, 500); // Matches the transition duration
+        }, 500);
     } else {
-        // Fade in the image and add blur
         score.style.visibility = 'visible';
         score.classList.add("show");
         score.style.opacity = '1';
