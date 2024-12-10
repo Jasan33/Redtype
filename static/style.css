@@ -5,12 +5,12 @@
 }
 
 body {
-    background-color: #ffffff;
+    background: radial-gradient(circle, #7b7c7e, #ffffff, #ffffff, #7b7c7e);    
     color: rgb(0, 0, 0);
 }
 
 .blur-background {
-    filter: blur(10px); /* Adjust the blur intensity as needed */
+    filter: blur(10px); /* Adds a 10 pixel blur to the background */
     transition: filter 0.5s ease-out; /* Smooth transition for blur */
     background-color: rgba(255, 255, 255, 0);
 }
@@ -110,6 +110,10 @@ a {
     height: 75%;
 }
 
+#usernames {
+    color: #ffffff;
+}
+
 @media (max-width: 700px) {
     .menu {
         gap: 30px;
@@ -122,6 +126,10 @@ a {
         padding: 8% 25%;
         z-index: 101;
     }
+}
+
+#words {
+    margin-bottom: 5%;
 }
 
 @media (max-width: 700px) {
@@ -218,21 +226,28 @@ a {
 
 .main_game {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     text-align: justify;
     margin-left: 4.5%;
     margin-right: 4.5%;
+    margin-top: -100px;
     padding: 60px;
     border-radius: 10px;
-    background-color: #8D99AE;
+    background-color: #000000ce;
     color: aliceblue;
     font-size: 40px;
 }
 
+
+@media (max-width: 1300px) {
+    .main_game {
+        margin-top: -300px;
+    }
+}
+
 @media (max-width: 700px) {
     .main_game {
-        margin-top: 100px;
+        margin-top: -100px;
     }
 }
 
@@ -245,13 +260,13 @@ a {
 }
 
 .active {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     padding: 5px;
 }
 
 .correct {
-    color: green;
+    color: rgb(0, 255, 0);
 }
 
 .incorrect {
@@ -276,7 +291,7 @@ a {
     border-style: solid;
     color: rgb(255, 255, 255);
     font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.124);
+    background-color: #000000ce;
 }
 
 @media (max-width: 700px) {
@@ -359,14 +374,21 @@ a {
     top: 50%;
     left: 50%;
     padding: 100px 200px;
-    z-index: 99; /* Higher than other elements */
+    z-index: 99;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
-    background-color: rgba(255, 255, 255, 0.289);
+    background-color: rgba(0, 0, 0, 0.485);
     border-radius: 10px;
 }
 
 @media (max-width: 1600px) {
+    #score {
+        font-size: 35px;
+        padding: 75px 125px;
+    }
+}
+
+@media (max-width: 1450px) {
     #score {
         font-size: 25px;
         padding: 50px 100px;
@@ -378,11 +400,20 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: aliceblue;
+}
+
+.scorestats, #retry {
+    color: aliceblue;
 }
 
 #ScoreReload {
     text-decoration: none;
+    color: aliceblue;
+    overflow-x: hidden;
 }
+
+
 
 #score.show {
     opacity: 1;
