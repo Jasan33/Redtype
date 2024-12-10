@@ -25,6 +25,15 @@ function leaderboard_url(url) {
     window.location.href = url; 
 }
 
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Tab") {
+        event.preventDefault(); // Prevent the default tab behavior (e.g., moving focus)
+        location.reload(); // Reload the page
+        window.location.href = "#game"; // scrrols to the element with id="game"
+        window.location.href = "#userInput";
+    }
+});
+
 
 function profile() { //open profile
     let profile = document.getElementById("profile");
@@ -186,6 +195,8 @@ function score() {
         score.style.opacity = '1';
         input.style.display = 'none';
         mainContent.classList.add("blur-background");
+        mainContent.style.filter = "blur(20px)";
+        mainContent.style.overflow = 'hidden';
     }
 }
 
