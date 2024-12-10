@@ -11,7 +11,7 @@ timer hits 0 it will automatically stop the game and display your results.
 
 ## Whats new?
 - Randomized words
-- Statics after each test
+- Results after a test
 
 ## coming soon!
 - Log in/sign in option 🙋🏻‍♀️
