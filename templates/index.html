@@ -35,31 +35,29 @@
         <div class="circle4"></div>
         <div class="circle5"></div>
         <div id="settings">
-            <img class="logo" src="{{ url_for('static', filename='images/redtype_simple_design_logo0923.png') }}">
+            <img class="logo" src="{{ url_for('static', filename='images/Redtype_logo_temp.png') }}">
             <p>settings coming soon</p>
         </div>
         <div id="profile">
-            <img class="logo" src="{{ url_for('static', filename='images/redtype_simple_design_logo0923.png') }}">
-            <div class="information">
-                <p id="usernames">
-                    {% if username %}
-                    <div class="profile_structure">
-                        <p>hi, {{ username }}!</p>
-                        <div class="profile_picture">
-                            <img src="{{ url_for('static', filename='images/log_in.png') }}">
-                            <p>change profile picture</p>
-                        </div>
+            <img class="logo" src="{{ url_for('static', filename='images/Redtype_logo_temp.png') }}">
+            <p id="usernames">
+                 {% if username %}
+                <div class="profile_structure">
+                    <p>hi, {{ username }}!</p>
+                    <div class="profile_picture">
+                         <img src="{{ url_for('static', filename='images/log_in.png') }}">
+                         <p>change profile picture</p>
                     </div>
-                    <a href="{{ url_for('logout') }}"> Click to Logout</a>
-                    {% else %}
-                        hi, Guest! login to view this page
-                        <div class="profile_guest">
-                            <a href="{{ url_for('login') }}">(click to login)</a>
-                            <a href="{{ url_for('register') }}">(Click to register)</a>
-                        </div>
-                    {% endif %}
-                </p>
-            </div>
+                </div>
+                <a href="{{ url_for('logout') }}"> Click to Logout</a>
+                {% else %}
+                     hi, Guest! login to view this page
+                    <div class="profile_guest">
+                         <a href="{{ url_for('login') }}">(click to login)</a>
+                         <a href="{{ url_for('register') }}">(Click to register)</a>
+                    </div>
+                {% endif %}
+            </p>
         </div>
         <div class="main_game" id="game">
             <div id="words">
@@ -77,8 +75,13 @@
             <div id="countdown">
                 <p></p>
             </div>
-            <input id="TimeChanger" type="text" placeholder="15">
-            <div><button onclick="TimeOption()" id="ButtonAddTime" alt="change time">Custom time?</button></div>
+            <form id="timeForm">
+                <input id="TimeChanger" type="text" placeholder="15">
+                <button onclick="TimeOption()" id="TimeChanger2" type="submit">Submit</button>
+            </form>
+            <div>
+                <div><button onclick="TimeOption()" id="ButtonAddTime" alt="change time">Custom time?</button></div>
+            </div>
         </div>
         <input autofocus type="text" id="userInput" class="input" placeholder="Type here...">
         <div class="stats">
