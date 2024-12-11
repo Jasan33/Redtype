@@ -11,6 +11,7 @@ window.onload = () => { // loads on reload
     const userInput = document.getElementById('userInput');
     userInput.onpaste = e => e.preventDefault();
     CheckCookies();
+    TimeOption();
    }
 
 function home(url) {  // url to home page
@@ -69,11 +70,13 @@ function settings() {
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const words = Array.from(document.querySelectorAll('.word')); // selects all words that are displayed
     const userInput = document.getElementById('userInput'); // Input field
 
     let currentIndex = 0; // Tracks the current word
+    let timeLeft = countdownDuration;
 
     // Set the first word as active
     words[currentIndex].classList.add('active');
@@ -95,7 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 CharactersCount += typedValue.length;
                 update_total_Characters();
                 UpdateCharactersCount();
-                WpmCount += typedValue.length/5 * 4;
+                Convert = 60/timeLeft
+                WpmCount += typedValue.length/5 * Convert;
+                console.log(Convert);
                 updateWpmCount();
                 currentIndex++; // Moves to the next word
             } else {
@@ -128,36 +133,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-function UserReady() { //starts timer once user is ready
-    if (value = localStorage.getItem('UserIsReady')) {
-        startCountdown();
-        localStorage.removeItem('UserIsReady');
-    } 
-}
-
-function timeuse() {
-    let useage = timeLeft/60
-}
-
-let countdownDuration = 15; // seconds
+let countdownDuration = 15; // Default duration in seconds
 let countdownElement = document.getElementById('countdown');
 
+document.getElementById('timeForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Get the value from the input field
+    let timeInput = document.getElementById("TimeChanger").value;
+
+    // Parse the input as a number
+    let customTime = parseInt(timeInput);
+
+    if (!isNaN(customTime) && customTime > 0) {
+        // If the input is valid, update the countdownDuration
+        countdownDuration = customTime;
+        countdownElement.innerHTML = `Countdown set to ${countdownDuration} seconds`;
+    } else {
+        // Display an error message if the input is invalid
+        countdownElement.innerHTML = "Please enter a valid positive number.";
+    }
+});
+
 function startCountdown() {
-    let input = document.getElementById("userInput");
     let timeLeft = countdownDuration;
-    let countdownElement = document.getElementById('countdown');
-    let ButtonAddTime = document.getElementById("ButtonAddTime")
-    let CountDownStyle = document.getElementById("countdown") 
+    let ButtonAddTime = document.getElementById("ButtonAddTime");
+    let CountDownStyle = document.getElementById("countdown");
 
     // Update the countdown every second
-    let timer = setInterval(function() {
+    let timer = setInterval(function () {
         if (timeLeft <= 0) {
             clearInterval(timer);
             countdownElement.innerHTML = "Time's up!";
             score();
-        }
-        else {
+        } else {
             countdownElement.innerHTML = timeLeft + " seconds remaining";
             ButtonAddTime.style.display = 'none';
             CountDownStyle.style.marginBottom = '18px';
@@ -166,14 +175,28 @@ function startCountdown() {
     }, 1000);
 }
 
+
+function UserReady() { //starts timer once user is ready
+    if (value = localStorage.getItem('UserIsReady')) {
+        startCountdown();
+        localStorage.removeItem('UserIsReady');
+    } 
+}
+
+
 function TimeOption() {
     let TimeChanger = document.getElementById("TimeChanger");
+    let TimeChanger2 = document.getElementById("TimeChanger2");
     let Button = document.getElementById("ButtonAddTime")
+    let CountDownStyle = document.getElementById("countdown");
     if (TimeChanger.style.display === "none") {
         TimeChanger.style.display = "block";
+        TimeChanger2.style.display = "block";
         Button.style.display = 'none';
     } else {
         TimeChanger.style.display = "none";
+        TimeChanger2.style.display = "none";
+        CountDownStyle.style.marginBottom = '18px';
     }
 }
 
