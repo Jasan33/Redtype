@@ -17,14 +17,14 @@ body {
 
 a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 5%;
+    padding: 50px 95px;
     height: 64px;
     margin-bottom: 200px;
     background-color: #EF233C;
@@ -45,7 +45,7 @@ a {
     left: 10%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 11% 7%;
+    padding: 8% 9%;
     z-index: -100;
 }
 
@@ -57,7 +57,7 @@ a {
     left: 30%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 11% 7%;
+    padding: 8% 9%;
     z-index: -100;
 }
 
@@ -69,7 +69,7 @@ a {
     left: 50%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 11% 7%;
+    padding: 8% 9%;
     z-index: -100;
 }
 
@@ -82,7 +82,7 @@ a {
     left: 70%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 11% 7%;
+    padding: 8% 9%;
     z-index: -100;
 }
 
@@ -94,11 +94,11 @@ a {
     left: 90%;
     background-color: #EF233C;
     border-radius: 50%;
-    padding: 11% 7%;
+    padding: 8% 9%;
     z-index: -100;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
     .circle, .circle2, .circle3, .circle4, .circle5{
         display: none;
     }
@@ -112,6 +112,7 @@ a {
 
 #usernames {
     color: #ffffff;
+    transition: color 0.5s ease-out;
 }
 
 @media (max-width: 700px) {
@@ -132,13 +133,13 @@ a {
     margin-bottom: 5%;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     #words {
         display: none;
     }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 1000px) {
     #words2 {
         display: none;
     }
@@ -166,7 +167,8 @@ a {
     align-items: center;
     padding: 75px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.325);
+    background-color: rgba(0, 0, 0, 0.482);
+    color: #ffffff;
     font-size: 30px;
 }
 
@@ -181,20 +183,25 @@ a {
     opacity: 1; 
     visibility: visible; 
     transition: opacity 0.5s ease-out;
-    margin-top: 0%;
+    margin-top: 0px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 75px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.325);
+    background-color: rgba(0, 0, 0, 0.482);
+    color: #ffffff;
     font-size: 30px;
 }
 
 .profile_structure {
     display: flex;
-    gap: 5%;
+    justify-content: center;
+    gap: 100%;
+    margin: 50px;
+    padding: 50px;
 }
 
 .profile_picture {
@@ -238,6 +245,12 @@ a {
     font-size: 40px;
 }
 
+
+@media (min-width: 1500px) {
+    .main_game {
+        margin-top: -50px;
+    }
+}
 
 @media (max-width: 1300px) {
     .main_game {
@@ -340,7 +353,6 @@ a {
 #TimeChanger {
     display: none;
     justify-content: space-between;
-    color: aliceblue;
     margin-bottom: 5px;
     font-size: 20px;
     background-color: rgba(255, 255, 255, 0.143);
@@ -514,11 +526,52 @@ a {
     background-color: rgba(148, 147, 147, 0.835);
 }
 
+#timeForm {
+    display: flex;
+    margin-left: 71%;
+}
+
+#TimeChanger2 {
+   padding: 5px 10px;
+   font-size: 15px;
+   margin-bottom: 5px;
+   border-radius: 10px;
+}
+
+@media (max-width: 1750px) {
+    #timeForm {
+        margin-left: 60%;
+    }
+}
+
+@media (max-width: 1250px) {
+    #timeForm {
+        margin-left: 30%;
+    }
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #0000005e;
+    padding: 100px;
+    margin-bottom: -200px;
+}
+
+.main_leaderboard {
+    background-color: rgba(0, 0, 0, 0.53);
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: -100px;
+}
+
 .leaderboard {
     display: flex;
     justify-content: space-between;
     padding: 1%;
     margin-right: 4%;
+    font-size: 20px;
 }
 
 .leaderboard:hover {
