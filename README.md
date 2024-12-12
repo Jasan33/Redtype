@@ -1,24 +1,25 @@
 <h1 align="center"> Welcome to Redtype! </h1>
-The offcial Redtype github where all the magic happens
+<p align="center"> The offcial Redtype github where all the magic happends
 
-In this game, you can test your typing speed, compete with others, rise your globally ranking, level up to be the greates and last but, not least imporove your typing.
+In this game, you can test your typing speed, compete with others, rise your globally ranking, level up to be the greates and last but, not least imporove your typing.</p>
 
-### How the game works:
+
+## How the game works:
 This game uses wpm to determain speed, wpm stands simply for "words per minute" and is used to descripe
 how fast a user can type. Typing speed can always be improved by the more you play. Once you enter the website you will
 see some randomized words pop up in a screen. Below this screen is an input field where you can start the test. Once the
 timer hits 0 it will automatically stop the game and display your results. 
 
 ## Whats new?
-- Randomized words
-- Results after a test
+- Log in/sign in option 🙋🏻‍♀️
+- Randomized words 🎲
+- Results after tests 📄
+- Globl leaderboard 👑
 
 ## coming soon!
-- Log in/sign in option 🙋🏻‍♀️
 - Accessible anywhere 🌍
 - Leveling system 📈
 - Muliplayer 🎮
-- Globl leaderboard 👑
 - Daily Quests 📝
 - Redtype supporter benefits 💕
 
@@ -62,9 +63,16 @@ timer hits 0 it will automatically stop the game and display your results.
   These days I took a break from coding and started learning something new like apache, nginx, advanced flask, mysql, etc. I than started to learn how to make my website public. I used apache on the beginning, but later moved over to nginx because I learned that nginx is more resource-efficient and gives better performance than Apache. I port forwarded port 80 and port 443 to nginx and now using my public I was able to view my website. I then used cloudflare (www.cloudflare.com) to change the dns to www.redtype.Jasan.top
 
 ## 11/11/2024 - 11/14/2024
-  Added a coockies feature to the webside
+  Added a coockies feature to the webside, since I am planning to make a login feature I need to add cookies. Cookies on a webside is what saves the login session so the user don't have to repeatly login after a reload. I wanted to start by making a pop up for the first time visitors. I used local storage to make this happen and during this process I didn't recive any errors fortunately. 
 
 ## 12/2/2024 - 12/6/2024
   started on login, register page
 
+</details>
+
+
+## Need help?
+
+<details>
+  <summary>User guidence for Redtype</summary>
 </details>
