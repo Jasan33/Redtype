@@ -28,8 +28,8 @@ function leaderboard_url(url) {
 
 document.addEventListener("keydown", function (event) {
     if (event.key === "Tab") {
-        event.preventDefault(); // Prevent the default tab behavior (e.g., moving focus)
-        location.reload(); // Reload the page
+        event.preventDefault(); // Prevents the default tab behavior (e.g., moving focus)
+        location.reload(); // Reloads the page
         window.location.href = "#game"; // scrrols to the element with id="game"
         window.location.href = "#userInput";
     }
@@ -55,18 +55,18 @@ function profile() { //open profile
 }
 
 function settings() {
-    let profile = document.getElementById("settings");
+    let settings = document.getElementById("settings");
 
-    if (profile.classList.contains("show")) {
-        profile.style.opacity = '0';
+    if (settings.classList.contains("show")) {
+        settings.style.opacity = '0';
         setTimeout(function() {
-            profile.classList.remove("show");
-            profile.style.visibility = 'hidden';
+            settings.classList.remove("show");
+            settings.style.visibility = 'hidden';
         }, 500);
     } else {
-        profile.style.visibility = 'visible';
-        profile.classList.add("show");
-        profile.style.opacity = '1';
+        settings.style.visibility = 'visible';
+        settings.classList.add("show");
+        settings.style.opacity = '1';
     }
 }
 
@@ -84,11 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
     userInput.addEventListener('keydown', (event) => {
         if (event.key === ' ') {
             event.preventDefault(); // Prevent adding a space to the input field
-            const typedValue = userInput.value.trim(); // Remove leading/trailing spaces
+            const typedValue = userInput.value.trim(); // checks is user typed right word without spaces
             const currentWord = words[currentIndex].textContent;
 
             if (typedValue === currentWord) {
-                // If Word typed correctly
+                // If the Word typed was correct
                 words[currentIndex].classList.remove('active');
                 words[currentIndex].classList.add('correct');
                 UserReady();
