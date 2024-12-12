@@ -184,7 +184,7 @@ a {
     visibility: visible; 
     transition: opacity 0.5s ease-out;
     margin-top: 0px;
-    margin-bottom: 100px;
+    margin-bottom: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -248,7 +248,7 @@ a {
 
 @media (min-width: 1500px) {
     .main_game {
-        margin-top: -50px;
+        margin-top: -150px;
     }
 }
 
@@ -439,6 +439,7 @@ a {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-out;
+    overflow: hidden;
 }
 
 #cookies.show {
@@ -455,8 +456,9 @@ a {
     z-index: 99;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
-    background-color: rgba(148, 147, 147, 0.835);
+    background-color: rgb(255, 255, 255);
     margin-top: 10px;
+    overflow: hidden;
 }
 
 #CookieOption {
@@ -466,34 +468,36 @@ a {
 }
 
 #AcceptCookies {
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     margin-top: 50px;
     border-radius: 10%;
     font-size: 15px;
-    background-color: rgba(248, 1, 1, 0.143);
+    background-color: rgba(34, 248, 1, 0.489);
     padding: 15px;
     border-radius: 20px;
     text-decoration: none;
+    overflow: hidden;
 }
 
 #AcceptCookies:hover {
-    background-color: rgba(248, 1, 1, 0.286);
+    background-color: rgb(34, 248, 1);
     cursor: pointer;
 }
 
 #RejectCookies {
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     margin-top: 50px;
     border-radius: 10%;
     font-size: 15px;
-    background-color: rgba(34, 248, 1, 0.143);
+    background-color: rgba(248, 1, 1, 0.345);
     padding: 15px;
     border-radius: 20px;
     text-decoration: none;
+    overflow: hidden;
 }
 
 #RejectCookies:hover {
-    background-color: rgba(34, 248, 1, 0.286);
+    background-color: rgba(248, 1, 1, 0.451);
     cursor: pointer;
 }
 
@@ -563,7 +567,7 @@ a {
     background-color: rgba(0, 0, 0, 0.53);
     color: #ffffff;
     margin-bottom: 10px;
-    margin-top: -100px;
+    margin-top: -200px;
 }
 
 .leaderboard {
@@ -576,9 +580,9 @@ a {
 
 .leaderboard:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .leaderboard_titels {
