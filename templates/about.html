@@ -32,32 +32,29 @@
     <div class="circle4"></div>
     <div class="circle5"></div>
     <div id="settings">
-        <img class="logo" src="{{ url_for('static', filename='images/redtype_simple_design_logo0923.png') }}">
+        <img class="logo" src="{{ url_for('static', filename='images/Redtype_logo_temp.png') }}">
         <p>settings coming soon</p>
     </div>
     <div id="profile">
-        <img class="logo" src="{{ url_for('static', filename='images/redtype_simple_design_logo0923.png') }}">
-        <div class="information">
-            <p id="usernames">
+        <img class="logo" src="{{ url_for('static', filename='images/Redtype_logo_temp.png') }}">
+        <p id="usernames">
                 {% if username %}
-                <div class="profile_structure">
-                    <p>hi, {{ username }}!</p>
-                    <div class="profile_picture">
+            <div class="profile_structure">
+                <p>hi, {{ username }}!</p>
+                <div class="profile_picture">
                         <img src="{{ url_for('static', filename='images/log_in.png') }}">
                         <p>change profile picture</p>
-                    </div>
                 </div>
-                <a href="{{ url_for('logout') }}"> Click to Logout</a>
-                {% else %}
+            </div>
+            <a href="{{ url_for('logout') }}"> Click to Logout</a>
+            {% else %}
                     hi, Guest! login to view this page
-                    <div class="profile_guest">
+                <div class="profile_guest">
                         <a href="{{ url_for('login') }}">(click to login)</a>
                         <a href="{{ url_for('register') }}">(Click to register)</a>
-                    </div>
-                {% endif %}
-            </p>
-        </div>
-        <h1 class="leaderboard_h1">Leaderboard Ranking</h1>
+                </div>
+            {% endif %}
+        </p>
     </div>
     <h1>About us</h1>
     <script src="{{url_for('static', filename='script.js')}}"></script>
