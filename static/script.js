@@ -1,7 +1,7 @@
 var WordCount = parseInt(localStorage.getItem("WordCount")) || 0;
 var CharactersCount = parseInt(localStorage.getItem("characters")) || 0;
 var WpmCount = parseInt(localStorage.getItem("WpmCount")) || 0;
-window.onload = () => { // loads on reload
+window.onload = () => { // loads this conent once the page is reloaded
     let countdownElement = document.getElementById('countdown');
     UpdateWordCount();
     updateWpmCount();
@@ -177,7 +177,7 @@ function startCountdown() {
 
 
 function UserReady() { //starts timer once user is ready
-    if (value = localStorage.getItem('UserIsReady')) {
+    if (localStorage.getItem('UserIsReady')) {
         startCountdown();
         localStorage.removeItem('UserIsReady');
     } 
@@ -274,7 +274,7 @@ async function update_total_Characters() {
 function CheckCookies() {
     let cookiesDisplay = document.getElementById("cookies");
 
-    if (value = localStorage.getItem('cookies')) {
+    if (localStorage.getItem('cookies')) {
         console.log("cookies are enabled");
         cookiesDisplay.style.display = "none";
     } else {
