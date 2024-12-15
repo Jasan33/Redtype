@@ -1,6 +1,8 @@
 <h1 align="center"> Welcome to Redtype! </h1>
 <p align="center"> The offcial Redtype github where all the magic happends
 
+### Now available! at (https://redtype.jasan.top)
+
 In this game, you can test your typing speed, compete with others, rise your globally ranking, level up to be the greates and last but, not least imporove your typing.</p>
 
 
