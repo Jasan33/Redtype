@@ -22,10 +22,10 @@ AES_KEY = os.getenv("AES_KEY")
 
 @app.route("/")
 def home():
-    username = session.get('username', None)  # Get username if logged in, otherwise None
+    username = session.get('username', None)  # Get a username if logged in, otherwise None
     words = select_words()  # Generates a list of words
-    words2 = select_words2()  # Generates a list of words
-    return render_template('index.html', words=words, words2=words2, username=username)
+    words2 = select_words2()  # Generates a list of words for smaller devices
+    return render_template('index.html', words=words, words2=words2, username=username) #return page
 
 
 @app.route("/leaderboard")
@@ -35,29 +35,29 @@ def leaderboard():
         return redirect(url_for('login'))
     
     username = session['username']
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT username, characters, total_words FROM user ORDER BY total_words DESC")
-    people = cur.fetchall()
-    cur.close()
+    cur = mysql.connection.cursor() # Opens a cursor object to interact with the database.
+    cur.execute("SELECT username, level, total_words FROM user ORDER BY total_words DESC")
+    people = cur.fetchall() # Gets all rows as a list
+    cur.close() # closes the database to free resources
     return render_template('leaderboard.html', people=people, username=username)
 
 
 def select_words2():
-    # Select 45 words from category 'a'
-    words = random.sample(word_categories['a'], 10)
+    # Select 10 words from category 'word_list'
+    words = random.sample(word_categories['word_list'], 10)
     random.shuffle(words)  # Randome and Shuffled words are selected
     return words
 
 
 def select_words():
-    # Select 45 words from category 'a'
-    words = random.sample(word_categories['a'], 45)
+    # Select 45 words from category 'word_list'
+    words = random.sample(word_categories['word_list'], 45)
     random.shuffle(words)  # Randome and Shuffled words are selected
     return words
 
-# Word categories
+# A list of 200 commonly used words
 word_categories = {
-    'a': [
+    'word_list': [
         "the", "develop", "of", "and", "a", "to", "in", "he", "have", "it", "that", "for", "they", "much", "with", "as", "not", "on", "she",
         "at", "by", "this", "we", "you", "do", "but", "from", "or", "which", "one", "would", "all", "will", "there", "say", "who",
         "make", "when", "can", "more", "if", "no", "man", "out", "other", "so", "what", "time", "up", "go", "about", "than", "into",
@@ -74,63 +74,21 @@ word_categories = {
     ]
 }
 
-@app.route("/update_total_words", methods=["POST"])
-def update_total_words():
-    if 'user_id' not in session:
-        return {"error": "User not logged in"}, 401
-
-    user_id = session['user_id']
-    cur = mysql.connection.cursor()
-    cur.execute("""
-        UPDATE user 
-        SET total_words = total_words + 1 
-        WHERE id = %s
-    """, (user_id,))
-    mysql.connection.commit()
-    cur.close()
-    return {"success": True}
-
-@app.route("/update_total_Characters", methods=["POST"])
-def update_total_Characters():
-    if 'user_id' not in session:
-        return {"error": "User not logged in"}, 401
-
-    data = request.get_json()
-    if not data or 'characters' not in data:
-        return {"error": "Invalid request data"}, 400
-
-    user_id = session['user_id']
-    characters = data['characters']
-
-    try:
-        cur = mysql.connection.cursor()
-        cur.execute("""
-            UPDATE user
-            SET characters = characters + %s
-            WHERE id = %s
-        """, (characters, user_id))
-        mysql.connection.commit()
-        cur.close()
-        return {"success": True}
-    except Exception as e:
-        print(f"Error updating characters: {e}")
-        return {"error": "Failed to update characters"}, 500
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        # Checks if the incoming request is a POST request (indicating that the user has submitted the form).
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
         
-        # Checks if the passwords match
+        # Checks if the passwords matchs
         if password != confirm_password:
-            flash("Passwords do not match. Please try again.")
+            flash("Passwords do not match Please try again")
             return render_template('register.html')
 
-        # Add user to the redtype database
+        # Adds the user to redtype's database
         cur = mysql.connection.cursor()
         cur.execute("""
             INSERT INTO user (username, email, password)
@@ -139,7 +97,7 @@ def register():
         mysql.connection.commit()
         cur.close()
         
-        flash("Registration successful! Please log in.")
+        flash("Registration successful! Please log in")
         return redirect(url_for('login'))
 
     return render_template('register.html')
@@ -158,7 +116,7 @@ def login():
             FROM user
             WHERE username = %s
         """, (AES_KEY, username))
-        user = cur.fetchone()
+        user = cur.fetchone() # Retrieves the first matching row (if any
         cur.close()
 
         if user and user[2].decode('utf-8') == password:  # Decrypt and compare password
@@ -167,19 +125,65 @@ def login():
             flash("Login successful!")
             return redirect(url_for('home'))
         else:
-            flash("Invalid credentials. Please try again.")
+            flash("Invalid credentials Please try again")
     
     return render_template('login.html')
 
 @app.route("/logout")
 def logout():
     session.clear()  # Clear all session data
-    flash("You have been logged out.")
+    flash("You have been logged out!")
     return redirect(url_for('home'))
 
 @app.route("/about")
 def about():
     return render_template('about.html')
+
+
+
+@app.route("/update_total_words", methods=["POST"])
+def update_total_words():
+    if 'user_id' not in session:
+        return {"error": "User not logged in"}, 401
+        # makaes sure that the user is logged in otherwise returns an 401 error (Unauthorized)
+
+    user_id = session['user_id'] #Gets the username from session
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        UPDATE user 
+        SET total_words = total_words + 1 
+        WHERE id = %s
+    """, (user_id,)) # Adds +1 to the total words of user that is logged in %s
+    mysql.connection.commit() # Saves the changes made by the query to the database.
+    cur.close()
+    return {"success": True} # Sends a JSON response to the client indicating that the operation was successful.
+
+
+# @app.route("/update_total_Characters", methods=["POST"])
+# def update_total_Characters():
+#     if 'user_id' not in session:
+#         return {"error": "User not logged in"}, 401
+
+#     data = request.get_json()
+#     if not data or 'characters' not in data:
+#         return {"error": "Invalid request data"}, 400  # client error
+
+#     user_id = session['user_id']
+#     characters = data['characters']
+
+#     try:
+#         cur = mysql.connection.cursor()
+#         cur.execute("""
+#             UPDATE user
+#             SET characters = characters + %s
+#             WHERE id = %s
+#         """, (characters, user_id))
+#         mysql.connection.commit()
+#         cur.close()
+#         return {"success": True}
+#     except Exception as e:
+#         print(f"Error updating characters: {e}")
+#         return {"error": "Failed to update characters"}, 500 # unexpected server error
 
 if __name__ == '__main__':
     app.run(debug=True)
