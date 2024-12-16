@@ -36,6 +36,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 
+
 function profile() { //open profile
     let profile = document.getElementById("profile");
 
@@ -71,20 +72,20 @@ function settings() {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const words = Array.from(document.querySelectorAll('.word')); // selects all words that are displayed
-    const userInput = document.getElementById('userInput'); // Input field
+document.addEventListener('DOMContentLoaded', () => { // Runs after the HTML document has loaded
+    const words = Array.from(document.querySelectorAll('.word')); // selects all the words
+    const userInput = document.getElementById('userInput'); // The text input field where the user types
 
     let currentIndex = 0; // Tracks the current word
     let timeLeft = countdownDuration;
 
-    // Set the first word as active
+    //makes the next word active
     words[currentIndex].classList.add('active');
 
     userInput.addEventListener('keydown', (event) => {
         if (event.key === ' ') {
-            event.preventDefault(); // Prevent adding a space to the input field
-            const typedValue = userInput.value.trim(); // checks is user typed right word without spaces
+            event.preventDefault(); // Prevents adding a space to the input field
+            const typedValue = userInput.value.trim(); // checks if user typed right word without spaces
             const currentWord = words[currentIndex].textContent;
 
             if (typedValue === currentWord) {
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 UpdateWordCount();
                 CharactersCount += typedValue.length;
                 update_total_Characters();
-                UpdateCharactersCount();
+                // UpdateCharactersCount();
                 Convert = 60/timeLeft
                 WpmCount += typedValue.length/5 * Convert;
                 console.log(Convert);
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     userInput.addEventListener('input', () => {
-        const typedValue = userInput.value.trim(); // Remove leading/trailing spaces
+        const typedValue = userInput.value.trim();
         const currentWord = words[currentIndex].textContent;
 
         if (currentWord.startsWith(typedValue)) {
@@ -155,6 +156,14 @@ document.getElementById('timeForm').addEventListener('submit', function(event) {
     }
 });
 
+function UserReady() { //starts timer once user is ready
+    if (localStorage.getItem('UserIsReady')) {
+        startCountdown();
+        localStorage.removeItem('UserIsReady');
+    } 
+}
+
+
 function startCountdown() {
     let timeLeft = countdownDuration;
     let ButtonAddTime = document.getElementById("ButtonAddTime");
@@ -173,14 +182,6 @@ function startCountdown() {
         }
         timeLeft--;
     }, 1000);
-}
-
-
-function UserReady() { //starts timer once user is ready
-    if (localStorage.getItem('UserIsReady')) {
-        startCountdown();
-        localStorage.removeItem('UserIsReady');
-    } 
 }
 
 
@@ -254,22 +255,22 @@ function UpdateCharactersCount() {
     paragraph2.textContent = "Total Characters: " + CharactersCount;
 }
 
-async function update_total_Characters() {
-    try {
-        const response = await fetch("/update_total_Characters", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ characters: CharactersCount }), // Send the character count
-        });
-        if (!response.ok) {
-            console.error("Failed to update characters on the server.");
-        }
-    } catch (error) {
-        console.error("Error:", error);
-    }
-}
+// async function update_total_Characters() {
+//     try {
+//         const response = await fetch("/update_total_Characters", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify({ characters: CharactersCount }), // Send the character count
+//         });
+//         if (!response.ok) {
+//             console.error("Failed to update characters on the server.");
+//         }
+//     } catch (error) {
+//         console.error("Error:", error);
+//     }
+// }
 
 function CheckCookies() {
     let cookiesDisplay = document.getElementById("cookies");
