@@ -29,9 +29,12 @@ timer hits 0 it will automatically stop the game and display your results.
 
 <details>
   <summary>User guidence for Redtype</summary>
+  ![image (7)](https://github.com/user-attachments/assets/e8ce8cc4-829d-4cf7-b66a-c7e4b22e289a)
+
 
 ##  Step 1:
   Start by entering the url "redtype.jasan.top" onto your search bar on any search engine.
+![image (6)](https://github.com/user-attachments/assets/147af645-3709-4b19-a25e-f687cd870fa2)
 
 ##  Step 2: 
   If a website comes up where it asks you about cookies than you have done it correctly, congrats. Now read the message and choose either to accept or decline.
