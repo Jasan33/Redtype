@@ -1,9 +1,7 @@
 <h1 align="center"> Welcome to Redtype! </h1>
-<p align="center"> The offcial Redtype github where all the magic happends
+<p align="center"> The offcial Redtype github where all the magic happends</p>
 
-### Now available! at (https://redtype.jasan.top)
-
-In this game, you can test your typing speed, compete with others, rise your globally ranking, level up to be the greates and last but, not least imporove your typing.</p>
+## Now available at (https://redtype.jasan.top)
 
 
 ## How the game works:
@@ -17,13 +15,39 @@ timer hits 0 it will automatically stop the game and display your results.
 - Randomized words 🎲
 - Results after tests 📄
 - Globl leaderboard 👑
+- Accessible anywhere 🌍
 
 ## coming soon!
-- Accessible anywhere 🌍
 - Leveling system 📈
+- save scores 🏆
 - Muliplayer 🎮
 - Daily Quests 📝
 - Redtype supporter benefits 💕
+
+
+## Need help?
+
+<details>
+  <summary>User guidence for Redtype</summary>
+
+##  Step 1:
+  Start by entering the url "redtype.jasan.top" onto your search bar on any search engine.
+
+##  Step 2: 
+  If a website comes up where it asks you about cookies than you have done it correctly, congrats. Now read the message and choose either to accept or decline.
+
+##  step 3:
+  once the pop up disappear scroll down a little bit until you see a input field and some words on screen
+
+##  step 4:
+  Start typing these words and you will notice a timer ticking slowly down. Try to type as many words as you can in these 15 seconds. After that you notice a pop up, thats your stats. 
+
+##  step 5:
+  If you want to play again you can press tab or the "try again" button. Above the input field you will also notice a "custom timer" option, use this if you feel like 15 seconds isn't a enough time for you. 
+
+##  step 6:
+  If you want to save your scores or join in the global leagues, you need to log in. If you scroll up to the top you will se a profile to the right. Click this and than select the register option.
+</details>
 
 ## Documentary
 
@@ -34,15 +58,15 @@ timer hits 0 it will automatically stop the game and display your results.
 
 
 ##  10/14/2024
-  Made a figma template that displays my vision for redtype. 
+  Made a figma template that displays my vision for redtype. I usually use Premier XD, but unfortunately they have shut down so I had to use Figma. It was kinda advanced at first sight, but I got the hang of it now. I also made a Github Repository and a Kanban board
   ![Redtype](https://github.com/user-attachments/assets/3a9b9355-b2d1-4f70-b7e9-d387eb1a3076)
 
 ##  10/15/2024
-  From the beginning of the projct I started by writing down some notes and making a kanban board of the plan. I later started by making a Redtype logo. I then decided to make a webside and fucused on the front part of the website, where I made the navbar and a few other components.
+  I started by today, making a Redtype logo. This wasn't necessary at all in this project, but I was having the Photoshop energy. I felt like this logo was good, but when I asked other classmates they disagreed so I think have to remove or change it at some point. I then decided to make a webside and fucused on the front part of the website, where I made the navbar and a few other components.
   ![Redtype before the start](https://github.com/user-attachments/assets/890bfceb-c3ae-4f18-9f88-fd6269d31428)
 
 ##  10/16/2024 - 10/17/2024
-   I started directly on the main process of making the game. I liked monkeytype's design and took inspiration to creat the main game in the middle of the screen (https://monkeytype.com). I decided to make the main colors grey and red since its a good match of contrast and its overall a unic design.Today I learned using flask and connected it with the website, now I can use python, sql along with HTML, CSS and javascript. I also coded inn some basic python that makes randome words pop up on the screen. This also automaticly regenerate each time you refresh the website. The python script was simply done by using the randit command that can selects words from a list. The hard part was to understand and connect CSS, javascript and the images using python. HTML is no longer the main template that decides the connections.
+   on the 16th and 17th of october I started directly on the main process of making the game. I liked monkeytype's design and took inspiration to creat the main game in the middle of the screen (https://monkeytype.com). I decided to make the main colors grey and red since its a good match of contrast and its overall a unic design.Today I learned using flask and connected it with the website, now I can use python, sql along with HTML, CSS and javascript. I also coded inn some basic python that makes randome words pop up on the screen. This also automaticly regenerate each time you refresh the website. The python script was simply done by using the randit command that can selects words from a list. The hard part was to understand and connect CSS, javascript and the images using python. HTML is no longer the main template that decides the connections.
 
 
 ##  10/19/2024
@@ -72,9 +96,32 @@ timer hits 0 it will automatically stop the game and display your results.
 
 </details>
 
-
-## Need help?
+## Sources
 
 <details>
-  <summary>User guidence for Redtype</summary>
+  <summary>Sources</summary>
+
+# Inspiration:
+  Monkeytype: https://monkeytype.com
+
+  10fastfingers: https://10fastfingers.com
+
+# Tutorials
+  Python Flask: https://www.youtube.com/watch?v=4nzI4RKwb5I&list=PLzMcBGfZo4-n4vJJybUVV3Un_NFS5EOgX&index=4
+
+  Nginx: https://www.youtube.com/watch?app=desktop&v=iInUBOVeBCc
+
+  ENV and securty: https://www.youtube.com/watch?v=Fr2MxT9M0V4
+
+  Mariadb: https://www.youtube.com/watch?v=cBDz7P4gTCI&ab_channel=TechBrothersIT
+
+  License: https://www.youtube.com/watch?v=TSyoSDBZKbU
+
+# Others
+  ChatGPT: https://chatgpt.com
+
+  Codefactor: https://www.codefactor.io
+
+  wakatime: https://wakatime.com/
+
 </details>
