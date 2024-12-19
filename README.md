@@ -1,7 +1,7 @@
 <h1 align="center"> Welcome to Redtype! </h1>
 <p align="center"> 
 
-![image (7)](https://github.com/user-attachments/assets/e8ce8cc4-829d-4cf7-b66a-c7e4b22e289a)
+![image (9)](https://github.com/user-attachments/assets/f85c8bfd-26b9-43a5-9c74-781f4bf2068a)
 
 </p>
 
@@ -51,12 +51,19 @@ timer hits 0 it will automatically stop the game and display your results.
   Now read the message and choose either to accept or reject cookies.
   </p>
 
+![image (8)](https://github.com/user-attachments/assets/b518cb94-c640-4410-a785-8675d05a596b)
+
+
 ##  step 3:
   <p>
   once the pop up disappear scroll down a little bit until you see a some randome words on screen.<br>
   Under these words is a timer and an input field where you can type.<br>
   This is the main part of the game and likely where you will be spending most of your time.
   </p>
+
+![image (10)](https://github.com/user-attachments/assets/b53e875a-1528-484a-a8f8-c8763dd9d914)
+
+
 
 ##  step 4:
   <p>
