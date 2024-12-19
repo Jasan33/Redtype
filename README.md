@@ -1,5 +1,9 @@
 <h1 align="center"> Welcome to Redtype! </h1>
-<p align="center"> The offcial Redtype github where all the magic happends</p>
+<p align="center"> 
+
+![image (7)](https://github.com/user-attachments/assets/e8ce8cc4-829d-4cf7-b66a-c7e4b22e289a)
+
+</p>
 
 ## Now available at (https://redtype.jasan.top)
 
@@ -29,27 +33,54 @@ timer hits 0 it will automatically stop the game and display your results.
 
 <details>
   <summary>User guidence for Redtype</summary>
+  
   ![image (7)](https://github.com/user-attachments/assets/e8ce8cc4-829d-4cf7-b66a-c7e4b22e289a)
 
 
 ##  Step 1:
-  Start by entering the url "redtype.jasan.top" onto your search bar on any search engine.
+  <p>
+  Start by entering the url "redtype.jasan.top" onto your search bar on any search engine.<br>
+  Or just CTRL + Click to follow the link if you are on PC (https://redtype.jasan.top)
+  </p>
+
 ![image (6)](https://github.com/user-attachments/assets/147af645-3709-4b19-a25e-f687cd870fa2)
 
 ##  Step 2: 
-  If a website comes up where it asks you about cookies than you have done it correctly, congrats. Now read the message and choose either to accept or decline.
+  <p>
+  If a website shows up where it wants you to accept cookies than you have done it correctly, congrats. <br>
+  Now read the message and choose either to accept or reject cookies.
+  </p>
 
 ##  step 3:
-  once the pop up disappear scroll down a little bit until you see a input field and some words on screen
+  <p>
+  once the pop up disappear scroll down a little bit until you see a some randome words on screen.<br>
+  Under these words is a timer and an input field where you can type.<br>
+  This is the main part of the game and likely where you will be spending most of your time.
+  </p>
 
 ##  step 4:
-  Start typing these words and you will notice a timer ticking slowly down. Try to type as many words as you can in these 15 seconds. After that you notice a pop up, thats your stats. 
+  <p>
+  Once you Start typing you will notice a timer start ticking down. The timer should be sat at 15 seconds which can be changed. <br>
+  Try to type as many words as you can in these 15 seconds. After that you notice a pop up, that will be your stat or result.
+  </p>
 
 ##  step 5:
-  If you want to play again you can press tab or the "try again" button. Above the input field you will also notice a "custom timer" option, use this if you feel like 15 seconds isn't a enough time for you. 
+  <p>
+  If you want to play again you can press tab or the "try again" button. <br>
+  Above the input field you will also notice a "custom timer" option, as I mentioned a few steps above. <br>
+  Use this if you feel like 15 seconds isn't a enough time for you.
+  </p>
+
+
 
 ##  step 6:
-  If you want to save your scores or join in the global leagues, you need to log in. If you scroll up to the top you will se a profile to the right. Click this and than select the register option.
+  <p>
+  If you want to save your scores or join in the global leagues, you need to log in. If you scroll up to the top you will se a profile to the right. <br>
+  Click this and than select the register option.
+  </p>
+
+
+
 </details>
 
 ## Documentary
