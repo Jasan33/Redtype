@@ -255,23 +255,6 @@ function UpdateCharactersCount() {
     paragraph2.textContent = "Total Characters: " + CharactersCount;
 }
 
-// async function update_total_Characters() {
-//     try {
-//         const response = await fetch("/update_total_Characters", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({ characters: CharactersCount }), // Send the character count
-//         });
-//         if (!response.ok) {
-//             console.error("Failed to update characters on the server.");
-//         }
-//     } catch (error) {
-//         console.error("Error:", error);
-//     }
-// }
-
 function CheckCookies() {
     let cookiesDisplay = document.getElementById("cookies");
 

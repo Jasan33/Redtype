@@ -159,31 +159,5 @@ def update_total_words():
     return {"success": True} # Sends a JSON response to the client indicating that the operation was successful.
 
 
-# @app.route("/update_total_Characters", methods=["POST"])
-# def update_total_Characters():
-#     if 'user_id' not in session:
-#         return {"error": "User not logged in"}, 401
-
-#     data = request.get_json()
-#     if not data or 'characters' not in data:
-#         return {"error": "Invalid request data"}, 400  # client error
-
-#     user_id = session['user_id']
-#     characters = data['characters']
-
-#     try:
-#         cur = mysql.connection.cursor()
-#         cur.execute("""
-#             UPDATE user
-#             SET characters = characters + %s
-#             WHERE id = %s
-#         """, (characters, user_id))
-#         mysql.connection.commit()
-#         cur.close()
-#         return {"success": True}
-#     except Exception as e:
-#         print(f"Error updating characters: {e}")
-#         return {"error": "Failed to update characters"}, 500 # unexpected server error
-
 if __name__ == '__main__':
     app.run(debug=True)
