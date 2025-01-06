@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => { // Runs after the HTML doc
                 update_total_words();
                 UpdateWordCount();
                 CharactersCount += typedValue.length;
-                update_total_Characters();
-                // UpdateCharactersCount();
+                //update_total_Characters();
+                UpdateCharactersCount();
                 Convert = 60/timeLeft
                 WpmCount += typedValue.length/5 * Convert;
                 console.log(Convert);
